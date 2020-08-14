@@ -4,6 +4,7 @@
         <h4>Última atualização em {{ lastUpdatedDate }}</h4>
         <PieChart/>
         <LineChart/>
+        <LogarithmicLineChart/>
     </section>
 </template>
 
@@ -11,6 +12,7 @@
     import CovidData from '../datasources/covid.json';
     import PieChart from "../components/PieChart";
     import LineChart from "../components/LineChart";
+    import LogarithmicLineChart from "../components/LogarithmicLineChart";
 
     export default {
         name: "Home",
@@ -23,6 +25,7 @@
         },
         components: {
             LineChart,
+            LogarithmicLineChart,
             PieChart
         }
     }
