@@ -4,6 +4,7 @@
     <main id="main">
       <router-view/>
     </main>
+      <LineChart/>
     <TheFooter/>
   </div>
 </template>
@@ -11,11 +12,13 @@
 <script>
   import TheHeader from "./components/TheHeader.vue";
   import TheFooter from "./components/TheFooter.vue";
+  import LineChart from "./components/LineChart.vue";
 
   export default {
     components: {
       TheHeader,
-      TheFooter
+      TheFooter,
+      LineChart
     }
   };
 </script>
