@@ -12,31 +12,36 @@ export default {
                     {
                         label: 'Casos confirmados',
                         borderColor: '#ec3237',
-                        backgroundColor: 'transparent',
+                        backgroundColor: '#ec3237',
+                        fill:false,
                         data: getData("total_confirmed")
                     },
                     {
                         label: 'Casos ativos',
-                        borderColor: '#ef4b3f',
-                        backgroundColor: 'transparent',
+                        borderColor: '#e46e1b',
+                        backgroundColor: '#e46e1b',
+                        fill:false,
                         data: getData("active_cases")
                     },
                     {
                         label: 'Casos suspeitos',
                         borderColor: '#ffc107',
-                        backgroundColor: 'transparent',
+                        backgroundColor: '#ffc107',
+                        fill:false,
                         data: getData("total_suspect")
                     },
                     {
                         label: 'Casos recuperados',
                         borderColor: '#00a85a',
-                        backgroundColor: 'transparent',
+                        backgroundColor: '#00a85a',
+                        fill:false,
                         data: getData("total_recovered")
                     },
                     {
                         label: 'Óbitos',
                         borderColor: '#606062',
-                        backgroundColor: 'transparent',
+                        backgroundColor: '#606062',
+                        fill:false,
                         data: getData("total_deaths")
                     }
                 ]
