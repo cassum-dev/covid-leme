@@ -1,10 +1,11 @@
 <template>
     <section>
-        <h1>Covid Leme</h1>
         <h4>Última atualização em {{ lastUpdatedDate }}</h4>
-        <PieChart/>
-        <LineChart/>
-        <LogarithmicLineChart/>
+        <div class="container">
+            <PieChart class="container-item"/>
+            <LineChart class="container-item"/>
+            <LogarithmicLineChart class="container-item"/>
+        </div>
     </section>
 </template>
 
@@ -32,5 +33,23 @@
 </script>
 
 <style scoped>
+    @media (min-width: 500px) {
+        .container {
+            flex: 1;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: flex-start;
+        }
 
+        .container-item{
+            padding-bottom: 2rem;
+            flex-basis: 50%;
+        }
+    }
+
+    @media (max-width: 499px) {
+        section {
+            text-align: center;
+        }
+    }
 </style>

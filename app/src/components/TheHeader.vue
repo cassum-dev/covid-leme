@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav>
-            <p>COVID LEME</p>
+            <h3>COVID LEME</h3>
             <router-link to="/" class="logo">
                 <img src="../assets/logo.png" alt="VueLogo">
             </router-link>
@@ -29,6 +29,6 @@
     }
 
     .logo img {
-        width: 90px;
+        width: 60px;
     }
 </style>

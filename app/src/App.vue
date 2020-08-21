@@ -57,10 +57,16 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-
   }
 
   #main {
-    flex: 1
+    flex: 1;
+  }
+
+  @media (min-width: 500px) {
+    #app {
+      margin-right: 5%;
+      margin-left: 5%;
+    }
   }
 </style>
