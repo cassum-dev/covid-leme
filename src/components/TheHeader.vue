@@ -5,7 +5,7 @@
 
       <ul class="nav-menu">
         <li class="nav-menu-item">
-          Histórico de Estágios do comércio
+          Histórico de Estágios do Comércio
         </li>
         <li class="nav-menu-item">
           Informações do Estágio Atual
