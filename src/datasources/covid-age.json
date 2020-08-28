@@ -1,0 +1,38 @@
+[
+    {
+        "date": "2020-05-15",
+        "epidemiological_week": 20,
+        "ages": [
+            {
+                "initial_age": 0,
+                "final_age": 9,
+                "total_cases": 2
+            },
+            {
+                "initial_age": 10,
+                "final_age": 20,
+                "total_cases": 2
+            },
+            {
+                "initial_age": 21,
+                "final_age": 40,
+                "total_cases": 6
+            },
+            {
+                "initial_age": 41,
+                "final_age": 60,
+                "total_cases": 8
+            },
+            {
+                "initial_age": 61,
+                "final_age": 80,
+                "total_cases": 12
+            },
+            {
+                "initial_age": 81,
+                "final_age": null,
+                "total_cases": 1
+            }
+        ]
+    },
+]

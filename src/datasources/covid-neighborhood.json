@@ -1,0 +1,32 @@
+[
+    {
+        "date": "2020-05-15",
+        "epidemiological_week": 20,
+        "neighborhoods_with_cases": [
+            "Centro",
+            "Jd. São Joaquim",
+            "Jd. Governador",
+            "Jd. Quaglia",
+            "Jd. Nova Leme",
+            "Jd. Eloísa",
+            "Jd. Bela Vista",
+            "Jd. Universitário",
+            "Jd. Eroise",
+            "Vila Terezinha",
+            "Jd. Nova Granada",
+            "Jd. Amália",
+            "Jd. do Bosque",
+            "Jd. Imperial",
+            "Jd. Empyreo",
+            "Jd. Santa Rita",
+            "Jd. Graminha",
+            "Taquari Ponte",
+            "Fazenda Santo Antônio",
+            "Jd. do Sol",
+            "Jd. Alvorada",
+            "Jd. das Palmeiras",
+            "Jd. Alto da Boa Vista",
+            "Jd. Itamaraty"
+        ]
+    },
+]

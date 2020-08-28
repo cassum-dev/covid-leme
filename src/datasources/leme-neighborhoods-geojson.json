@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Centro",
+        "coordinates": [
+            [
+                -47.390258,
+                -22.185399
+            ],
+            [
+                -47.390258,
+                -22.185399
+            ]
+        ]
+    },
+    {
+        "name": "Jd. São Joaquim",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Governador",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Quaglia",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Nova Leme",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Eloísa",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Bela Vista",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Universitário",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Eroise",
+        "coordinates": []
+    },
+    {
+        "name": "Vila Terezinha",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Nova Granada",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Amália",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. do Bosque",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Imperial",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Empyreo",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Santa Rita",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Graminha",
+        "coordinates": []
+    },
+    {
+        "name": "Taquari Ponte",
+        "coordinates": []
+    },
+    {
+        "name": "Fazenda Santo Antônio",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. do Sol",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Alvorada",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. das Palmeiras",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Alto da Boa Vista",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Itamaraty",
+        "coordinates": []
+    }
+]
