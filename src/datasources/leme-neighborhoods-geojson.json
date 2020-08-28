@@ -119,9 +119,41 @@
     {
         "name": "Jd. Santa Paula",
         "coordinates": []
-    }
+    },
     {
         "name": "Jd. Ariana",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Primavera",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Adelina",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Presidente",
+        "coordinates": []
+    },
+    {
+        "name": "Cidade Jardim",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Lívia",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Alto da Glória",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. São Jorge",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Nova Santa Rita",
         "coordinates": []
     }
 ]
