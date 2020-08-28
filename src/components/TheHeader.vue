@@ -36,6 +36,7 @@ nav {
   padding: 15px 20px;
   box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
   flex-direction: row;
+  background-color: #fff;
 }
 
 .logo {
@@ -52,5 +53,12 @@ nav {
   display: flex;
   flex-direction: row;
   flex-grow: 0.1;
+}
+
+@media (min-width: 500px) {
+  nav {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
 }
 </style>

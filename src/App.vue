@@ -41,6 +41,7 @@
   body {
     font-family: "Helvetica", Arial, Helvetica, sans-serif;
     color: #345;
+    background-color: #F0F8FF;
   }
 
   a {

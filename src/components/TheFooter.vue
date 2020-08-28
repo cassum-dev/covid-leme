@@ -20,4 +20,11 @@
         position: relative;
         top: 2rem;
     }
+
+    @media (min-width: 500px) {
+        footer {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    }
 </style>
