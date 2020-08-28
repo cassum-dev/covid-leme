@@ -914,7 +914,7 @@
     {
         "date": "2020-05-15",
         "epidemiological_week": 20,
-        "is_last": false,
+        "is_last": true,
         "total_confirmed": 33,
         "total_recovered": 11,
         "total_suspect": 4,
