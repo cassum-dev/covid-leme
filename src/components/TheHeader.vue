@@ -47,6 +47,7 @@ export default {
   padding: 15px 20px;
   box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
   flex-direction: row;
+  background-color: #fff;
 }
 
 .logo img {
