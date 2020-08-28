@@ -2,7 +2,36 @@
     {
         "date": "2020-05-15",
         "epidemiological_week": 20,
+        "is_last": false,
         "male": 13,
         "female": 18
+    },
+    {
+        "date": "2020-05-16",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 13,
+        "female": 18
+    },
+    {
+        "date": "2020-05-17",
+        "epidemiological_week": 21,
+        "is_last": false,
+        "male": 13,
+        "female": 18
+    },
+    {
+        "date": "2020-05-18",
+        "epidemiological_week": 21,
+        "is_last": false,
+        "male": 14,
+        "female": 21
+    },
+    {
+        "date": "2020-05-19",
+        "epidemiological_week": 21,
+        "is_last": false,
+        "male": 14,
+        "female": 22
     },
 ]
