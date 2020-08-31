@@ -125,4 +125,32 @@
         "male": 29,
         "female": 37
     },
+    {
+        "date": "2020-06-02",
+        "epidemiological_week": 23,
+        "is_last": false,
+        "male": 30,
+        "female": 38
+    },
+    {
+        "date": "2020-06-03",
+        "epidemiological_week": 23,
+        "is_last": false,
+        "male": 33,
+        "female": 41
+    },
+    {
+        "date": "2020-06-04",
+        "epidemiological_week": 23,
+        "is_last": false,
+        "male": 35,
+        "female": 42
+    },
+    {
+        "date": "2020-06-05",
+        "epidemiological_week": 23,
+        "is_last": false,
+        "male": 35,
+        "female": 44
+    },
 ]
