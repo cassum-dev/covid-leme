@@ -171,5 +171,33 @@
     {
         "name": "Jd. Alto das Palmeiras",
         "coordinates": []
+    },
+    {
+        "name": "Jd. Bonsucesso",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Jequitibá",
+        "coordinates": []
+    },
+    {
+        "name": "Vila Bancária",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Flórida",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. São José",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Isabel Cristina",
+        "coordinates": []
+    },
+    {
+        "name": "Taquari",
+        "coordinates": []
     }
 ]
