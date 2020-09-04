@@ -219,13 +219,33 @@
     {
         "name": "Jd. Cambuhy",
         "coordinates": []
-    }
+    },
     {
         "name": "Jd. Serelepe",
         "coordinates": []
-    }
+    },
     {
         "name": "Jd. Altos da Santa Rita",
         "coordinates": []
-    }
+    },
+    {
+        "name": "Jd. Santana",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Saulo",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Renascença",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. Sumaré",
+        "coordinates": []
+    },
+    {
+        "name": "Jd. São Manoel",
+        "coordinates": []
+    },
 ]
