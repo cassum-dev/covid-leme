@@ -13,8 +13,14 @@
             <div class="card">
                 <h3>Todos os gráficos</h3>
                 <div class="content">
-                    <LineChart/>
-                    <LogarithmicLineChart/>
+                    <b-tabs justified lazy>
+                        <b-tab title="Casos totais" active>
+                            <LineChart/>
+                        </b-tab>
+                        <b-tab title="Curva logarítimica">
+                            <LogarithmicLineChart/>
+                        </b-tab>
+                    </b-tabs>
                 </div>
             </div>
         </div>
