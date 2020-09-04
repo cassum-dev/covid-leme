@@ -16,9 +16,30 @@
                     <b-tabs justified lazy>
                         <b-tab title="Casos totais" active>
                             <LineChart/>
+                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                                Tem alguma dúvida sobre esse gráfico?
+                            </a>
+                            <p/>
+                            <div v-show="showInfo">
+                                <h5>O que esse gráfico representa ?</h5>
+                                O gráfico de <b>Casos Totais</b> é um gráfico de linhas tradicional, que exibe o crescimento das diferentes situações dos casos de Covid-19 a partir de dados diários.
+                                <p/>
+                                <h5>Como ler esse gráfico ?</h5>
+                                Em um gráfico de linhas a leitura se dá por meio da visualização dos pontos do mesmo, com os pontos representando os casos de determinado dia, tais dados podem ser analisados com foco tanto no curto quanto a longo prazo, providenciando assim uma visão do crescimento dos casos no município de Leme.
+                            </div>
                         </b-tab>
-                        <b-tab title="Curva logarítimica">
+                        <b-tab title="Curva logarítmica">
                             <LogarithmicLineChart/>
+                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                                Tem alguma dúvida sobre esse gráfico ?
+                            </a>
+                            <p/>
+                            <div v-show="showInfo">
+                                <h5>O que esse gráfico representa ?</h5> O gráfico de <b>Curva Logarítmica</b> é um gráfico de linhas, que visa exibir a taxa de contágio pelo Covid-19 a médio e longo prazo a partir de dados diários.
+                                <p/>
+                                <h5>Como ler esse gráfico ?</h5>
+                                Em um gráfico logarítmico os dados devem ser lidos como um todo, observando-se o comportamento das curvas do mesmo, sendo que uma curva mais plana representa uma menor taxa de contaminação diária durante certo prazo, enquanto picos e curvas acentuadas demonstram uma maior taxa de contaminação, providenciado assim uma visão abrangente de como o município de Leme lidou e vem lidando com a contenção da pandemia.
+                            </div>
                         </b-tab>
                     </b-tabs>
                 </div>
@@ -35,6 +56,20 @@
 
     export default {
         name: "Home",
+        data () {
+            return {
+                showInfo: false
+            }
+        },
+        methods: {
+            showChartInfo: function(show) {
+                if (show) {
+                    return this.showInfo = false;
+                }
+
+                return this.showInfo = true;
+            }
+        },
         computed: {
             lastUpdatedDate: function() {
                 let lastDay = CovidData.find(element => element.is_last == true);
@@ -51,6 +86,10 @@
 </script>
 
 <style scoped>
+    .chart-info {
+        cursor: pointer;
+    }
+
     @media (min-width: 500px) {
         .card {
             background-color: #fff;
