@@ -468,4 +468,74 @@
         "male": 576,
         "female": 673
     },
+    {
+        "date": "2020-07-21",
+        "epidemiological_week": 30,
+        "is_last": false,
+        "male": 594,
+        "female": 696
+    },
+    {
+        "date": "2020-07-22",
+        "epidemiological_week": 30,
+        "is_last": false,
+        "male": 617,
+        "female": 715
+    },
+    {
+        "date": "2020-07-23",
+        "epidemiological_week": 30,
+        "is_last": false,
+        "male": 639,
+        "female": 739
+    },
+    {
+        "date": "2020-07-24",
+        "epidemiological_week": 30,
+        "is_last": false,
+        "male": 648,
+        "female": 753
+    },
+    {
+        "date": "2020-07-25",
+        "epidemiological_week": 30,
+        "is_last": false,
+        "male": 657,
+        "female": 768
+    },
+    {
+        "date": "2020-07-26",
+        "epidemiological_week": 31,
+        "is_last": false,
+        "male": 660,
+        "female": 772
+    },
+    {
+        "date": "2020-07-27",
+        "epidemiological_week": 31,
+        "is_last": false,
+        "male": 681,
+        "female": 803
+    },
+    {
+        "date": "2020-07-28",
+        "epidemiological_week": 31,
+        "is_last": false,
+        "male": 688,
+        "female": 820
+    },
+    {
+        "date": "2020-07-29",
+        "epidemiological_week": 31,
+        "is_last": false,
+        "male": 713,
+        "female": 844
+    },
+    {
+        "date": "2020-07-30",
+        "epidemiological_week": 31,
+        "is_last": false,
+        "male": 727,
+        "female": 864
+    },
 ]
