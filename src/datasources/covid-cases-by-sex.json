@@ -258,4 +258,39 @@
         "male": 131,
         "female": 157
     },
+    {
+        "date": "2020-06-21",
+        "epidemiological_week": 26,
+        "is_last": false,
+        "male": 131,
+        "female": 159
+    },
+    {
+        "date": "2020-06-22",
+        "epidemiological_week": 26,
+        "is_last": false,
+        "male": 141,
+        "female": 177
+    },
+    {
+        "date": "2020-06-23",
+        "epidemiological_week": 26,
+        "is_last": false,
+        "male": 161,
+        "female": 188
+    },
+    {
+        "date": "2020-06-24",
+        "epidemiological_week": 26,
+        "is_last": false,
+        "male": 183,
+        "female": 211
+    },
+    {
+        "date": "2020-06-25",
+        "epidemiological_week": 26,
+        "is_last": false,
+        "male": 192,
+        "female": 225
+    },
 ]
