@@ -2623,7 +2623,7 @@
     {
         "date": "2020-07-05",
         "epidemiological_week": 28,
-        "is_last": false,
+        "is_last": true,
         "neighborhoods_with_cases": [
             "Centro",
             "Jd. São Joaquim",
@@ -2685,6 +2685,5 @@
             "Jd. Sumaré",
             "Jd. São Manoel"
         ]
-    },
-
+    }
 ]
