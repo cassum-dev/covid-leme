@@ -580,4 +580,60 @@
         "male": 782,
         "female": 931
     },
+    {
+        "date": "2020-08-06",
+        "epidemiological_week": 32,
+        "is_last": false,
+        "male": 794,
+        "female": 952
+    },
+    {
+        "date": "2020-08-07",
+        "epidemiological_week": 32,
+        "is_last": false,
+        "male": 807,
+        "female": 980
+    },
+    {
+        "date": "2020-08-08",
+        "epidemiological_week": 32,
+        "is_last": false,
+        "male": 809,
+        "female": 980
+    },
+    {
+        "date": "2020-08-09",
+        "epidemiological_week": 33,
+        "is_last": false,
+        "male": 810,
+        "female": 981
+    },
+    {
+        "date": "2020-08-10",
+        "epidemiological_week": 33,
+        "is_last": false,
+        "male": 816,
+        "female": 995
+    },
+    {
+        "date": "2020-08-11",
+        "epidemiological_week": 33,
+        "is_last": false,
+        "male": 826,
+        "female": 1001
+    },
+    {
+        "date": "2020-08-12",
+        "epidemiological_week": 33,
+        "is_last": false,
+        "male": 837,
+        "female": 1017
+    },
+    {
+        "date": "2020-08-13",
+        "epidemiological_week": 33,
+        "is_last": false,
+        "male": 842,
+        "female": 1025
+    },
 ]
