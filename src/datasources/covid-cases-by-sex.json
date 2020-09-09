@@ -720,4 +720,102 @@
         "male": 918,
         "female": 1117
     },
+    {
+        "date": "2020-08-26",
+        "epidemiological_week": 35,
+        "is_last": false,
+        "male": 931,
+        "female": 1132
+    },
+    {
+        "date": "2020-08-27",
+        "epidemiological_week": 35,
+        "is_last": false,
+        "male": 938,
+        "female": 1148
+    },
+    {
+        "date": "2020-08-28",
+        "epidemiological_week": 35,
+        "is_last": false,
+        "male": 947,
+        "female": 1155
+    },
+    {
+        "date": "2020-08-29",
+        "epidemiological_week": 35,
+        "is_last": false,
+        "male": 952,
+        "female": 1162
+    },
+    {
+        "date": "2020-08-30",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 962,
+        "female": 1174
+    },
+    {
+        "date": "2020-08-31",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 971,
+        "female": 1180
+    },
+    {
+        "date": "2020-09-01",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 979,
+        "female": 1187
+    },
+    {
+        "date": "2020-09-02",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 989,
+        "female": 1193
+    },
+    {
+        "date": "2020-09-03",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 1000,
+        "female": 1207
+    },
+    {
+        "date": "2020-09-04",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 1003,
+        "female": 1219
+    },
+    {
+        "date": "2020-09-05",
+        "epidemiological_week": 36,
+        "is_last": false,
+        "male": 1011,
+        "female": 1223
+    },
+    {
+        "date": "2020-09-06",
+        "epidemiological_week": 37,
+        "is_last": false,
+        "male": 1014,
+        "female": 1228
+    },
+    {
+        "date": "2020-09-07",
+        "epidemiological_week": 37,
+        "is_last": false,
+        "male": 1015,
+        "female": 1231
+    },
+    {
+        "date": "2020-09-08",
+        "epidemiological_week": 37,
+        "is_last": true,
+        "male": 1027,
+        "female": 1241
+    }
 ]
