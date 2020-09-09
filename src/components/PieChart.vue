@@ -15,7 +15,7 @@
                     datasets: [
                         {
                             label: 'Covid Leme',
-                            backgroundColor: ['#ef4b3f', '#00a85a', '#606062'],
+                            backgroundColor: ['#ec3237', '#00a85a', '#606062'],
                             data: [
                                 getPieCovidData('active_cases'),
                                 getPieCovidData('total_recovered'),

@@ -11,15 +11,15 @@ export default {
                 datasets: [
                     {
                         label: 'Casos confirmados',
-                        borderColor: '#ec3237',
-                        backgroundColor: '#ec3237',
+                        borderColor: '#e46e1b',
+                        backgroundColor: '#e46e1b',
                         fill:false,
                         data: getData("total_confirmed")
                     },
                     {
                         label: 'Casos ativos',
-                        borderColor: '#e46e1b',
-                        backgroundColor: '#e46e1b',
+                        borderColor: '#ec3237',
+                        backgroundColor: '#ec3237',
                         fill:false,
                         data: getData("active_cases")
                     },
