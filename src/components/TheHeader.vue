@@ -53,4 +53,11 @@ export default {
 .logo img {
   width: 60px;
 }
+
+@media (min-width: 500px) {
+  .nav-bar {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+}
 </style>
