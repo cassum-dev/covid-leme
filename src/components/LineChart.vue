@@ -1,13 +1,14 @@
 <script>
 import CovidData from '../datasources/covid.json';
 import { Line } from 'vue-chartjs';
+import { formatDates } from "../services.js"
 
 export default {
     extends: Line,
     data () {
         return {
             chartdata: {
-                labels: getData("date"),
+                labels: formatDates(getData("date")),
                 datasets: [
                     {
                         label: 'Casos confirmados',

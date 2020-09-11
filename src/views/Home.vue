@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="card">
-            <h4>Última atualização em {{ lastUpdatedDate }}</h4>
+            <h4>Última atualização em {{ callFormatDates(lastUpdatedDate) }}</h4>
         </div>
         <div class="grid">
             <div class="card">
@@ -53,6 +53,7 @@
     import PieChart from "../components/PieChart";
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
+    import { formatDates } from "../services.js";
 
     export default {
         name: "Home",
@@ -68,6 +69,9 @@
                 }
 
                 return this.showInfo = true;
+            },
+            callFormatDates: function(date) {
+                return formatDates(date)
             }
         },
         computed: {
