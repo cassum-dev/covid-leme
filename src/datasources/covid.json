@@ -2802,7 +2802,7 @@
     {
         "date": "2020-09-10",
         "epidemiological_week": 37,
-        "is_last": true,
+        "is_last": false,
         "total_confirmed": 2331,
         "total_recovered": 2027,
         "total_suspect": 25,
@@ -2813,6 +2813,54 @@
         "new_recovered": 16,
         "new_suspect": 0,
         "new_in_icu": 1,
+        "new_deaths": 1
+    },
+    {
+        "date": "2020-09-11",
+        "epidemiological_week": 37,
+        "is_last": false,
+        "total_confirmed": 2343,
+        "total_recovered": 2043,
+        "total_suspect": 21,
+        "total_in_icu": 6,
+        "total_deaths": 53,
+        "active_cases": 247,
+        "new_confirmed": 12,
+        "new_recovered": 16,
+        "new_suspect": 0,
+        "new_in_icu": 0,
+        "new_deaths": 0
+    },
+    {
+        "date": "2020-09-12",
+        "epidemiological_week": 37,
+        "is_last": false,
+        "total_confirmed": 2345,
+        "total_recovered": 2043,
+        "total_suspect": 17,
+        "total_in_icu": 7,
+        "total_deaths": 53,
+        "active_cases": 249,
+        "new_confirmed": 2,
+        "new_recovered": 0,
+        "new_suspect": 0,
+        "new_in_icu": 1,
+        "new_deaths": 0
+    },
+    {
+        "date": "2020-09-13",
+        "epidemiological_week": 37,
+        "is_last": true,
+        "total_confirmed": 2348,
+        "total_recovered": 2043,
+        "total_suspect": 16,
+        "total_in_icu": 6,
+        "total_deaths": 54,
+        "active_cases": 251,
+        "new_confirmed": 3,
+        "new_recovered": 0,
+        "new_suspect": 0,
+        "new_in_icu": 0,
         "new_deaths": 1
     }
 ]
