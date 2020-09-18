@@ -7,7 +7,15 @@
             <div class="card">
                 <h3>Distribuição dos casos confirmados de covid hoje</h3>
                 <div class="content">
-                    <PieChart/>
+                    <PieChart
+                        :labels="['Casos ativos', 'Casos recuperados', 'Óbitos']"
+                        :colors="['#ec3237', '#00a85a', '#606062']"
+                        :data="[
+                            callGetPieCovidData('active_cases'),
+                            callGetPieCovidData('total_recovered'),
+                            callGetPieCovidData('total_deaths')
+                        ]"
+                    />
                 </div>
             </div>
             <div class="card">
@@ -41,6 +49,39 @@
                                 Em um gráfico logarítmico os dados devem ser lidos como um todo, observando-se o comportamento das curvas do mesmo, sendo que uma curva mais plana representa uma menor taxa de contaminação diária durante certo prazo, enquanto picos e curvas acentuadas demonstram uma maior taxa de contaminação, providenciado assim uma visão abrangente de como o município de Leme lidou e vem lidando com a contenção da pandemia.
                             </div>
                         </b-tab>
+                        <b-tab title="Casos entre sexos">
+                            <PieChart
+                                :labels="['Masculino', 'Feminino']"
+                                :colors="['#0dc9da', '#f466ea']"
+                                :data="[
+                                    callGetCovidCasesBySex('male'),
+                                    callGetCovidCasesBySex('female')
+                                ]"
+                            />
+                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                                Tem alguma dúvida sobre esse gráfico?
+                            </a>
+                            <p/>
+                            <div v-show="showInfo">
+                                <h5>O que esse gráfico representa ?</h5>
+                                O gráfico de <b>Casos entre sexos</b> é um
+                                gráfico de pizza tradicional, que exibe a
+                                relação dos casos de Covid-19 ocorridos entre
+                                homens e mulheres.
+                                <p/>
+                                <h5>Como ler esse gráfico ?</h5>
+                                Em um gráfico de pizza a leitura se dá pela
+                                comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre
+                                a vunerabilidade e a propensão de contaminação
+                                por cada sexo.
+                                <p>
+                                <h5>Observações</h5>
+                                A classificação de "sexo" de tal gráfico leva em
+                                consideração apenas o sexo biólogico dos
+                                afetados, seguindo o padrão de divulgação da
+                                prefeitura de Leme-SP e não associando assim gênero ou orientação sexual.
+                            </div>
+                        </b-tab>
                     </b-tabs>
                 </div>
             </div>
@@ -53,7 +94,7 @@
     import PieChart from "../components/PieChart";
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
-    import { formatDates } from "../services.js";
+    import { formatDates, getPieCovidData, getCovidCasesBySex } from "../services.js";
 
     export default {
         name: "Home",
@@ -70,8 +111,17 @@
 
                 return this.showInfo = true;
             },
+
             callFormatDates: function(date) {
                 return formatDates(date)
+            },
+
+            callGetPieCovidData: function(field) {
+                return getPieCovidData(field)
+            },
+
+            callGetCovidCasesBySex: function(field) {
+                return getCovidCasesBySex(field)
             }
         },
         computed: {

@@ -1,4 +1,5 @@
 import CovidData from "./datasources/covid.json";
+import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
 
 
 function getCovidData(field) {
@@ -13,6 +14,12 @@ function getCovidData(field) {
 
 function getPieCovidData(field) {
     let last_element = CovidData[CovidData.length - 1];
+
+    return last_element[field];
+}
+
+function getCovidCasesBySex(field) {
+    let last_element = CovidCasesBySex[CovidCasesBySex.length - 1];
 
     return last_element[field];
 }
@@ -42,4 +49,4 @@ function formatDates(data) {
     }
 }
 
-export { getCovidData, getPieCovidData, formatDates }
+export { getCovidData, getPieCovidData, getCovidCasesBySex, formatDates }
