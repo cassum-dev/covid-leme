@@ -11,9 +11,9 @@
                         :labels="['Casos ativos', 'Casos recuperados', 'Óbitos']"
                         :colors="['#ec3237', '#00a85a', '#606062']"
                         :data="[
-                            callGetPieCovidData('active_cases'),
-                            callGetPieCovidData('total_recovered'),
-                            callGetPieCovidData('total_deaths')
+                            callGetLastCovidData('active_cases'),
+                            callGetLastCovidData('total_recovered'),
+                            callGetLastCovidData('total_deaths')
                         ]"
                     />
                     <a class="chart-info" @click="showChartInfo(showInfo)">
@@ -37,6 +37,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card">
+                <h3>Casos confirmados hoje</h3>
+                <div class="content">
+                    <BarChart/>
+                    <a class="chart-info" @click="showChartInfo(showInfo)">
+                        Tem alguma dúvida sobre esse gráfico?
+                    </a>
+                    <p/>
+                    <div v-show="showInfo">
+                        <h5>O que esse gráfico representa ?</h5>
+                        O gráfico de <b>Casos confirmados hoje</b> é um gráfico de barras clássico, que exibe os novos casos confirmados, trazendo sempre as últimas informações sobre o Covid-19.
+                        <p/>
+                        <h5>Como ler esse gráfico ?</h5>
+                        Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática das ultimas confirmações de casos de Covid-19 em Leme-SP.
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <h3>Todos os gráficos</h3>
                 <div class="content">
@@ -113,7 +132,8 @@
     import PieChart from "../components/PieChart";
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
-    import { formatDates, getPieCovidData, getCovidCasesBySex } from "../services.js";
+    import BarChart from "../components/BarChart";
+    import { formatDates, getLastCovidData, getCovidCasesBySex } from "../services.js";
 
     export default {
         name: "Home",
@@ -135,13 +155,13 @@
                 return formatDates(date)
             },
 
-            callGetPieCovidData: function(field) {
-                return getPieCovidData(field)
+            callGetLastCovidData: function(field) {
+                return getLastCovidData(field)
             },
 
             callGetCovidCasesBySex: function(field) {
                 return getCovidCasesBySex(field)
-            }
+            },
         },
         computed: {
             lastUpdatedDate: function() {
@@ -153,7 +173,8 @@
         components: {
             LineChart,
             LogarithmicLineChart,
-            PieChart
+            PieChart,
+            BarChart,
         }
     }
 </script>

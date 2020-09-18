@@ -12,7 +12,7 @@ function getCovidData(field) {
     return results;
 }
 
-function getPieCovidData(field) {
+function getLastCovidData(field) {
     let last_element = CovidData[CovidData.length - 1];
 
     return last_element[field];
@@ -49,4 +49,4 @@ function formatDates(data) {
     }
 }
 
-export { getCovidData, getPieCovidData, getCovidCasesBySex, formatDates }
+export { getCovidData, getLastCovidData, getCovidCasesBySex, formatDates }
