@@ -1,26 +1,18 @@
 <script>
     import { Pie } from "vue-chartjs"
-    import  { getPieCovidData }  from "../services.js"
 
     export default {
         extends: Pie,
+        props: ['labels', 'colors', 'data'],
         data () {
             return {
                 chartdata: {
-                    labels: [
-                        'Casos ativos',
-                        'Casos recuperados',
-                        'Óbitos'
-                    ],
+                    labels: this.labels,
                     datasets: [
                         {
                             label: 'Covid Leme',
-                            backgroundColor: ['#ec3237', '#00a85a', '#606062'],
-                            data: [
-                                getPieCovidData('active_cases'),
-                                getPieCovidData('total_recovered'),
-                                getPieCovidData('total_deaths')
-                            ]
+                            backgroundColor: this.colors,
+                            data: this.data,
                         }
                     ],
                 },
