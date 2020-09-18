@@ -16,6 +16,25 @@
                             callGetPieCovidData('total_deaths')
                         ]"
                     />
+                    <a class="chart-info" @click="showChartInfo(showInfo)">
+                        Tem alguma dúvida sobre esse gráfico?
+                    </a>
+                    <p/>
+                    <div v-show="showInfo">
+                        <h5>O que esse gráfico representa ?</h5>
+                        O gráfico de <b>Distribuição dos casos confirmados
+                        de covid hoje</b> é um gráfico de pizza tradicional,
+                        que exibe a relação dos casos de Covid-19 totais
+                        subdividos nas seções de "Casos confirmados", "Casos
+                        ativos" e "Óbitos".
+                        <p/>
+                        <h5>Como ler esse gráfico ?</h5>
+                        Em um gráfico de pizza a leitura se dá pela
+                        comparação entre o tamanho de suas seções (fatias),
+                        providenciando uma visão clara sobre
+                        a situação clínica da população que contraiu
+                        Covid-19 na cidade de Leme-SP.
+                    </div>
                 </div>
             </div>
             <div class="card">
