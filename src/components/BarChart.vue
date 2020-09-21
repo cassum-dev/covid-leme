@@ -7,6 +7,7 @@ export default {
     data () {
         return {
             chartdata: {
+                labels: [''],
                 datasets: [
                     {
                         label: 'Novos casos confirmados',
