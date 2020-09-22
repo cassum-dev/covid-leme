@@ -1,44 +1,37 @@
 <script>
 import { Bar } from 'vue-chartjs';
-import { getLastCovidData } from "../services.js";
 
 export default {
     extends: Bar,
+    props: ['labels', 'colors', 'data'],
     data () {
         return {
             chartdata: {
                 labels: [''],
-                datasets: [
-                    {
-                        label: 'Novos casos confirmados',
-                        borderColor: '#e46e1b',
-                        backgroundColor: '#e46e1b',
-                        data: [getLastCovidData("new_confirmed")]
-                    },
-                    {
-                        label: 'Novos casos suspeitos',
-                        borderColor: '#ffc107',
-                        backgroundColor: '#ffc107',
-                        data: [getLastCovidData("new_suspect")]
-                    },
-                    {
-                        label: 'Novos casos recuperados',
-                        borderColor: '#00a85a',
-                        backgroundColor: '#00a85a',
-                        data: [getLastCovidData("new_recovered")]
-                    },
-                    {
-                        label: 'Novos óbitos',
-                        borderColor: '#606062',
-                        backgroundColor: '#606062',
-                        data: [getLastCovidData("new_deaths")]
-                    }
-                ]
+                datasets: this.buildDatasets(),
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false
             }
+        }
+    },
+    methods: {
+        buildDatasets: function() {
+            var datasets = [];
+
+            this.labels.forEach((element, key) => {
+                datasets.push(
+                    {
+                        label: this.labels[key],
+                        borderColor: this.colors[key],
+                        backgroundColor: this.colors[key],
+                        data: [this.data[key]],
+                    },
+                );
+            });
+
+            return datasets;
         }
     },
     mounted () {

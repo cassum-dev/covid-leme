@@ -36,7 +36,26 @@
             <div class="card">
                 <h3>Casos confirmados hoje</h3>
                 <div class="content">
-                    <BarChart/>
+                    <BarChart
+                        :labels="[
+                            'Novos casos confirmados',
+                            'Novos casos suspeitos',
+                            'Novos casos recuperados',
+                            'Novos óbitos'
+                        ]"
+                        :colors="[
+                            '#e46e1b',
+                            '#ffc107',
+                            '#00a85a',
+                            '#606062'
+                        ]"
+                        :data="[
+                            callGetLastCovidData('new_confirmed'),
+                            callGetLastCovidData('new_suspect'),
+                            callGetLastCovidData('new_recovered'),
+                            callGetLastCovidData('new_deaths')
+                        ]"
+                    />
                     <a class="chart-info" @click="showNewCasesInfo
                         ? showNewCasesInfo = false
                         : showNewCasesInfo = true
