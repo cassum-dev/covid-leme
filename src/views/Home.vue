@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="card">
-            <h4>Última atualização em {{ callFormatDates(lastUpdatedDate) }}</h4>
+            <h4>Última atualização em {{ lastUpdatedDate }}</h4>
         </div>
         <div class="grid">
             <div class="card">
@@ -25,18 +25,10 @@
                     <p/>
                     <div v-show="showCasesDistributionInfo">
                         <h5>O que esse gráfico representa ?</h5>
-                        O gráfico de <b>Distribuição dos casos confirmados
-                        de covid hoje</b> é um gráfico de pizza tradicional,
-                        que exibe a relação dos casos de Covid-19 totais
-                        subdividos nas seções de "Casos confirmados", "Casos
-                        ativos" e "Óbitos".
+                        O gráfico de <b>Distribuição dos casos confirmados de covid hoje</b> é um gráfico de pizza tradicional, que exibe a relação dos casos de Covid-19 totais subdividos nas seções de "Casos confirmados", "Casos ativos" e "Óbitos".
                         <p/>
                         <h5>Como ler esse gráfico ?</h5>
-                        Em um gráfico de pizza a leitura se dá pela
-                        comparação entre o tamanho de suas seções (fatias),
-                        providenciando uma visão clara sobre
-                        a situação clínica da população que contraiu
-                        Covid-19 na cidade de Leme-SP.
+                        Em um gráfico de pizza a leitura se dá pela comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre a situação clínica da população que contraiu Covid-19 na cidade de Leme-SP.
                     </div>
                 </div>
             </div>
@@ -117,22 +109,13 @@
                             <p/>
                             <div v-show="showCasesBySexInfo">
                                 <h5>O que esse gráfico representa ?</h5>
-                                O gráfico de <b>Casos entre sexos</b> é um
-                                gráfico de pizza tradicional, que exibe a
-                                relação dos casos de Covid-19 ocorridos entre
-                                homens e mulheres.
+                                O gráfico de <b>Casos entre sexos</b> é um gráfico de pizza tradicional, que exibe a relação dos casos de Covid-19 ocorridos entre homens e mulheres.
                                 <p/>
                                 <h5>Como ler esse gráfico ?</h5>
-                                Em um gráfico de pizza a leitura se dá pela
-                                comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre
-                                a vunerabilidade e a propensão de contaminação
-                                por cada sexo.
+                                Em um gráfico de pizza a leitura se dá pela comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre a vunerabilidade e a propensão de contaminação por cada sexo.
                                 <p>
                                 <h5>Observações</h5>
-                                A classificação de "sexo" de tal gráfico leva em
-                                consideração apenas o sexo biólogico dos
-                                afetados, seguindo o padrão de divulgação da
-                                prefeitura de Leme-SP e não associando assim gênero ou orientação sexual.
+                                A classificação de "sexo" de tal gráfico leva em consideração apenas o sexo biólogico dos afetados, seguindo o padrão de divulgação da prefeitura de Leme-SP e não associando assim gênero ou orientação sexual.
                             </div>
                         </b-tab>
                     </b-tabs>
@@ -162,10 +145,6 @@
             }
         },
         methods: {
-            callFormatDates: function(date) {
-                return formatDates(date)
-            },
-
             callGetLastCovidData: function(field) {
                 return getLastCovidData(field)
             },
@@ -178,7 +157,7 @@
             lastUpdatedDate: function() {
                 let lastDay = CovidData.find(element => element.is_last == true);
 
-                return lastDay.date;
+                return formatDates(lastDay.date);
             }
         },
         components: {
@@ -195,15 +174,18 @@
         cursor: pointer;
     }
 
-    @media (min-width: 500px) {
+    .card {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
+        flex-basis: 49%;
+        height: fit-content;
+    }
+
+    @media (min-width: 480px) {
         .card {
-            background-color: #fff;
             border-radius: 1rem;
             margin-top: 2rem;
             padding: 0.8rem;
-            box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
-            flex-basis: 49%;
-            height: fit-content;
         }
 
         .grid {
@@ -214,19 +196,14 @@
         }
     }
 
-    @media (max-width: 499px) {
+    @media (max-width: 480px) {
         section {
             text-align: center;
         }
 
         .card {
-            background-color: #fff;
-            /* border-radius: 1rem; */
             margin-top: 1rem;
             padding: 0.5rem;
-            box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
-            flex-basis: 49%;
-            height: fit-content;
         }
     }
 </style>
