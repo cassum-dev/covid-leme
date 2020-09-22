@@ -16,11 +16,14 @@
                             callGetLastCovidData('total_deaths')
                         ]"
                     />
-                    <a class="chart-info" @click="showChartInfo(showInfo)">
+                    <a class="chart-info" @click="showCasesDistributionInfo
+                        ? showCasesDistributionInfo = false
+                        : showCasesDistributionInfo = true
+                    ">
                         Tem alguma dúvida sobre esse gráfico?
                     </a>
                     <p/>
-                    <div v-show="showInfo">
+                    <div v-show="showCasesDistributionInfo">
                         <h5>O que esse gráfico representa ?</h5>
                         O gráfico de <b>Distribuição dos casos confirmados
                         de covid hoje</b> é um gráfico de pizza tradicional,
@@ -42,11 +45,14 @@
                 <h3>Casos confirmados hoje</h3>
                 <div class="content">
                     <BarChart/>
-                    <a class="chart-info" @click="showChartInfo(showInfo)">
+                    <a class="chart-info" @click="showNewCasesInfo
+                        ? showNewCasesInfo = false
+                        : showNewCasesInfo = true
+                    ">
                         Tem alguma dúvida sobre esse gráfico?
                     </a>
                     <p/>
-                    <div v-show="showInfo">
+                    <div v-show="showNewCasesInfo">
                         <h5>O que esse gráfico representa ?</h5>
                         O gráfico de <b>Casos confirmados hoje</b> é um gráfico de barras clássico, que exibe os novos casos confirmados, trazendo sempre as últimas informações sobre o Covid-19.
                         <p/>
@@ -62,11 +68,14 @@
                     <b-tabs justified lazy>
                         <b-tab title="Casos totais" active>
                             <LineChart/>
-                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                            <a class="chart-info" @click="showTotalCasesInfo
+                                ? showTotalCasesInfo = false
+                                : showTotalCasesInfo = true
+                            ">
                                 Tem alguma dúvida sobre esse gráfico?
                             </a>
                             <p/>
-                            <div v-show="showInfo">
+                            <div v-show="showTotalCasesInfo">
                                 <h5>O que esse gráfico representa ?</h5>
                                 O gráfico de <b>Casos Totais</b> é um gráfico de linhas tradicional, que exibe o crescimento das diferentes situações dos casos de Covid-19 a partir de dados diários.
                                 <p/>
@@ -76,11 +85,14 @@
                         </b-tab>
                         <b-tab title="Curva logarítmica">
                             <LogarithmicLineChart/>
-                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                            <a class="chart-info" @click="showLogarithmicInfo
+                                ? showLogarithmicInfo = false
+                                : showLogarithmicInfo = true
+                            ">
                                 Tem alguma dúvida sobre esse gráfico ?
                             </a>
                             <p/>
-                            <div v-show="showInfo">
+                            <div v-show="showLogarithmicInfo">
                                 <h5>O que esse gráfico representa ?</h5> O gráfico de <b>Curva Logarítmica</b> é um gráfico de linhas, que visa exibir a taxa de contágio pelo Covid-19 a médio e longo prazo a partir de dados diários.
                                 <p/>
                                 <h5>Como ler esse gráfico ?</h5>
@@ -96,11 +108,14 @@
                                     callGetCovidCasesBySex('female')
                                 ]"
                             />
-                            <a class="chart-info" @click="showChartInfo(showInfo)">
+                            <a class="chart-info" @click="showCasesBySexInfo
+                                ? showCasesBySexInfo = false
+                                : showCasesBySexInfo = true
+                            ">
                                 Tem alguma dúvida sobre esse gráfico?
                             </a>
                             <p/>
-                            <div v-show="showInfo">
+                            <div v-show="showCasesBySexInfo">
                                 <h5>O que esse gráfico representa ?</h5>
                                 O gráfico de <b>Casos entre sexos</b> é um
                                 gráfico de pizza tradicional, que exibe a
@@ -139,18 +154,14 @@
         name: "Home",
         data () {
             return {
-                showInfo: false
+                showCasesDistributionInfo: false,
+                showNewCasesInfo: false,
+                showTotalCasesInfo: false,
+                showLogarithmicInfo: false,
+                showCasesBySexInfo: false,
             }
         },
         methods: {
-            showChartInfo: function(show) {
-                if (show) {
-                    return this.showInfo = false;
-                }
-
-                return this.showInfo = true;
-            },
-
             callFormatDates: function(date) {
                 return formatDates(date)
             },
