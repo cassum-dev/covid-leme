@@ -37,7 +37,8 @@
                 <h3>Casos confirmados hoje</h3>
                 <div class="content">
                     <BarChart
-                        :labels="[
+                        :chart-labels="['']"
+                        :data-labels="[
                             'Novos casos confirmados',
                             'Novos casos suspeitos',
                             'Novos casos recuperados',
@@ -69,6 +70,39 @@
                         <p/>
                         <h5>Como ler esse gráfico ?</h5>
                         Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática das ultimas confirmações de casos de Covid-19 em Leme-SP.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Óbitos confirmados</h3>
+                <div class="content">
+                    <BarChart
+                        :chart-labels="callGetCovidData('date')"
+                        :data-labels="[
+                            'Óbitos confirmados',
+                        ]"
+                        :colors="[
+                            '#606062',
+                        ]"
+                        :data="[
+                            callGetCovidData('total_deaths'),
+                        ]"
+                        :use-x-axis="true"
+                    />
+                    <a class="chart-info" @click="showNewCasesInfo
+                        ? showNewCasesInfo = false
+                        : showNewCasesInfo = true
+                    ">
+                        Tem alguma dúvida sobre esse gráfico?
+                    </a>
+                    <p/>
+                    <div v-show="showNewCasesInfo">
+                        <h5>O que esse gráfico representa ?</h5>
+                        O gráfico de <b>Óbitos confirmados</b> é um gráfico de barras clássico, que exibe os óbitos confirmados para Covid-19 por dia.
+                        <p/>
+                        <h5>Como ler esse gráfico ?</h5>
+                        Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática dos de casos óbito por Covid-19 em Leme-SP, assim como exibe uma estimativa de mortes para os próximos cinco dias.
                     </div>
                 </div>
             </div>
@@ -150,7 +184,7 @@
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
     import BarChart from "../components/BarChart";
-    import { formatDates, getLastCovidData, getCovidCasesBySex } from "../services.js";
+    import { formatDates, getLastCovidData, getCovidCasesBySex, getCovidData } from "../services.js";
 
     export default {
         name: "Home",
@@ -164,6 +198,14 @@
             }
         },
         methods: {
+            callGetCovidData: function(field) {
+                if (field == 'date') {
+                    return formatDates(getCovidData(field))
+                }
+
+                return getCovidData(field)
+            },
+
             callGetLastCovidData: function(field) {
                 return getLastCovidData(field)
             },

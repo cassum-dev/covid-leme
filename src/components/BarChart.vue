@@ -3,11 +3,11 @@ import { Bar } from 'vue-chartjs';
 
 export default {
     extends: Bar,
-    props: ['labels', 'colors', 'data'],
+    props: ['chartLabels', 'dataLabels', 'colors', 'data', 'useXAxis'],
     data () {
         return {
             chartdata: {
-                labels: [''],
+                labels: this.chartLabels,
                 datasets: this.buildDatasets(),
             },
             options: {
@@ -20,13 +20,15 @@ export default {
         buildDatasets: function() {
             var datasets = [];
 
-            this.labels.forEach((element, key) => {
+            this.dataLabels.forEach((element, key) => {
                 datasets.push(
                     {
-                        label: this.labels[key],
+                        label: this.dataLabels[key],
                         borderColor: this.colors[key],
                         backgroundColor: this.colors[key],
-                        data: [this.data[key]],
+                        data: this.useXAxis
+                            ? this.data[key]
+                            : [this.data[key]],
                     },
                 );
             });
@@ -39,3 +41,4 @@ export default {
     }
 }
 </script>
+
