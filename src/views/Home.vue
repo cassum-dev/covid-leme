@@ -90,14 +90,14 @@
                         ]"
                         :use-x-axis="true"
                     />
-                    <a class="chart-info" @click="showNewCasesInfo
-                        ? showNewCasesInfo = false
-                        : showNewCasesInfo = true
+                    <a class="chart-info" @click="showTotalDeathsInfo
+                        ? showTotalDeathsInfo = false
+                        : showTotalDeathsInfo = true
                     ">
                         Tem alguma dúvida sobre esse gráfico?
                     </a>
                     <p/>
-                    <div v-show="showNewCasesInfo">
+                    <div v-show="showTotalDeathsInfo">
                         <h5>O que esse gráfico representa ?</h5>
                         O gráfico de <b>Óbitos confirmados</b> é um gráfico de barras clássico, que exibe os óbitos confirmados para Covid-19 por dia.
                         <p/>
@@ -195,6 +195,7 @@
                 showTotalCasesInfo: false,
                 showLogarithmicInfo: false,
                 showCasesBySexInfo: false,
+                showTotalDeathsInfo: false,
             }
         },
         methods: {
