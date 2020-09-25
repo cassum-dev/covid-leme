@@ -24,6 +24,38 @@ function getCovidCasesBySex(field) {
     return last_element[field];
 }
 
+function getMobileAverage(field, days) {
+    let firstData = CovidData[CovidData.length - days][field],
+        lastData = CovidData[CovidData.length - 1][field],
+
+        mobileAverage = new Array(CovidData.length).fill(0),
+
+        average = (lastData - firstData) / days;
+
+    for (let i = 0; i < days; i++) {
+        mobileAverage.push(lastData + Math.ceil(average));
+
+        lastData = lastData + Math.ceil(average)
+    }
+
+    return mobileAverage;
+}
+
+function getMobileAverageDates(days) {
+    var startDate = getLastCovidData('date'),
+        dates = getCovidData('date');
+
+    for (let i = 1; i <= days; i++) {
+        let date = new Date(startDate);
+
+        date.setDate(date.getDate() + i);
+
+        dates.push(date.toISOString().split('T')[0]);
+    }
+
+    return formatDates(dates);
+}
+
 function formatDateToDmy(date) {
     let splitDate = date.split('-'),
         day = splitDate[2],
@@ -49,4 +81,4 @@ function formatDates(data) {
     }
 }
 
-export { getCovidData, getLastCovidData, getCovidCasesBySex, formatDates }
+export { getCovidData, getLastCovidData, getCovidCasesBySex, formatDates, getMobileAverage, getMobileAverageDates}

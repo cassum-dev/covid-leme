@@ -78,15 +78,18 @@
                 <h3>Óbitos confirmados</h3>
                 <div class="content">
                     <BarChart
-                        :chart-labels="callGetCovidData('date')"
+                        :chart-labels="callGetMobileAverageDates(7)"
                         :data-labels="[
                             'Óbitos confirmados',
+                            'Estimativas para os próximos dias'
                         ]"
                         :colors="[
                             '#606062',
+                            '#ec3237'
                         ]"
                         :data="[
                             callGetCovidData('total_deaths'),
+                            callGetMobileAverage('total_deaths', 7),
                         ]"
                         :use-x-axis="true"
                     />
@@ -102,7 +105,7 @@
                         O gráfico de <b>Óbitos confirmados</b> é um gráfico de barras clássico, que exibe os óbitos confirmados para Covid-19 por dia.
                         <p/>
                         <h5>Como ler esse gráfico ?</h5>
-                        Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática dos de casos óbito por Covid-19 em Leme-SP, assim como exibe uma estimativa de mortes para os próximos cinco dias.
+                        Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática dos de casos óbito por Covid-19 em Leme-SP, assim como exibe uma estimativa de mortes para os próximos sete dias.
                     </div>
                 </div>
             </div>
@@ -168,7 +171,7 @@
                                 Em um gráfico de pizza a leitura se dá pela comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre a vunerabilidade e a propensão de contaminação por cada sexo.
                                 <p>
                                 <h5>Observações</h5>
-                                A classificação de "sexo" de tal gráfico leva em consideração apenas o sexo biólogico dos afetados, seguindo o padrão de divulgação da prefeitura de Leme-SP e não associando assim gênero ou orientação sexual.
+                                A classificação de "sexo" de tal gráfico leva em consideração apenas o sexo biólogico dos afetados, seguindo o padrão de divulgação da prefeitura de Leme-SP e não englobando assim gênero ou orientação sexual.
                             </div>
                         </b-tab>
                     </b-tabs>
@@ -184,7 +187,7 @@
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
     import BarChart from "../components/BarChart";
-    import { formatDates, getLastCovidData, getCovidCasesBySex, getCovidData } from "../services.js";
+    import { formatDates, getLastCovidData, getCovidCasesBySex, getCovidData, getMobileAverage, getMobileAverageDates } from "../services.js";
 
     export default {
         name: "Home",
@@ -214,6 +217,14 @@
             callGetCovidCasesBySex: function(field) {
                 return getCovidCasesBySex(field)
             },
+
+            callGetMobileAverage: function(field, days) {
+                return getMobileAverage(field, days);
+            },
+
+            callGetMobileAverageDates: function(days) {
+                return getMobileAverageDates(days)
+            }
         },
         computed: {
             lastUpdatedDate: function() {
