@@ -1,10 +1,10 @@
 <template>
     <section>
-        <div class="card">
+        <b-card>
             <h4>Última atualização em {{ lastUpdatedDate }}</h4>
-        </div>
-        <div class="grid">
-            <div class="card">
+        </b-card>
+        <b-card-group columns>
+            <b-card>
                 <h3>Distribuição dos casos confirmados de covid hoje</h3>
                 <div class="content">
                     <PieChart
@@ -31,9 +31,9 @@
                         Em um gráfico de pizza a leitura se dá pela comparação entre o tamanho de suas seções (fatias), providenciando uma visão clara sobre a situação clínica da população que contraiu Covid-19 na cidade de Leme-SP.
                     </div>
                 </div>
-            </div>
+            </b-card>
 
-            <div class="card">
+            <b-card>
                 <h3>Casos confirmados hoje</h3>
                 <div class="content">
                     <BarChart
@@ -72,9 +72,9 @@
                         Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática das ultimas confirmações de casos de Covid-19 em Leme-SP.
                     </div>
                 </div>
-            </div>
+            </b-card>
 
-            <div class="card">
+            <b-card>
                 <h3>Óbitos confirmados</h3>
                 <div class="content">
                     <BarChart
@@ -108,9 +108,9 @@
                         Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática dos de casos óbito por Covid-19 em Leme-SP, assim como exibe uma estimativa de mortes para os próximos sete dias.
                     </div>
                 </div>
-            </div>
+            </b-card>
 
-            <div class="card">
+            <b-card>
                 <h3>Todos os gráficos</h3>
                 <div class="content">
                     <b-tabs justified lazy>
@@ -176,8 +176,8 @@
                         </b-tab>
                     </b-tabs>
                 </div>
-            </div>
-        </div>
+            </b-card>
+        </b-card-group>
     </section>
 </template>
 
@@ -248,24 +248,18 @@
     }
 
     .card {
-        background-color: #fff;
         box-shadow: 0 2px 4px rgba(30, 60, 90, 0.1);
-        flex-basis: 49%;
-        height: fit-content;
+        border: none;
+    }
+
+    .card-columns {
+        column-count: 2;
     }
 
     @media (min-width: 480px) {
         .card {
             border-radius: 1rem;
-            margin-top: 2rem;
-            padding: 0.8rem;
-        }
-
-        .grid {
-            flex: 1;
-            display: flex;
-            flex-flow: wrap;
-            justify-content: space-between;
+            margin-top: 1.5rem;
         }
     }
 
@@ -276,7 +270,6 @@
 
         .card {
             margin-top: 1rem;
-            padding: 0.5rem;
         }
     }
 </style>
