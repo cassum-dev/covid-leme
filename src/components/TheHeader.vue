@@ -15,7 +15,7 @@
               <b-nav-item disabled>
                 Informações do Estágio Atual
               </b-nav-item>
-              <b-nav-item disabled>
+              <b-nav-item href="/safety-pratices">
                 Boas Práticas de Segurança
               </b-nav-item>
             </b-navbar-nav>

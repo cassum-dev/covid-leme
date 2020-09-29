@@ -271,5 +271,9 @@
         .card {
             margin-top: 1rem;
         }
+
+        .card-columns {
+            column-count: 1;
+        }
     }
 </style>
