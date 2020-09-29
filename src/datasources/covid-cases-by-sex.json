@@ -947,8 +947,15 @@
     {
         "date": "2020-09-27",
         "epidemiological_week": 40,
-        "is_last": true,
+        "is_last": false,
         "male": 1183,
         "female": 1433
+    },
+    {
+        "date": "2020-09-28",
+        "epidemiological_week": 40,
+        "is_last": true,
+        "male": 1194,
+        "female": 1448
     }
 ]
