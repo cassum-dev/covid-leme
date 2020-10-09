@@ -1,5 +1,6 @@
 <script>
 import { Bar } from 'vue-chartjs';
+import { buildDatasets } from '../services.js'
 
 export default {
     extends: Bar,
@@ -8,32 +9,17 @@ export default {
         return {
             chartdata: {
                 labels: this.chartLabels,
-                datasets: this.buildDatasets(),
+                datasets: buildDatasets(
+                    this.dataLabels,
+                    this.colors,
+                    this.data,
+                    this.useXAxis
+                ),
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false
             }
-        }
-    },
-    methods: {
-        buildDatasets: function() {
-            var datasets = [];
-
-            this.dataLabels.forEach((element, key) => {
-                datasets.push(
-                    {
-                        label: this.dataLabels[key],
-                        borderColor: this.colors[key],
-                        backgroundColor: this.colors[key],
-                        data: this.useXAxis
-                            ? this.data[key]
-                            : [this.data[key]],
-                    },
-                );
-            });
-
-            return datasets;
         }
     },
     mounted () {

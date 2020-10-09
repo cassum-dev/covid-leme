@@ -81,4 +81,30 @@ function formatDates(data) {
     }
 }
 
-export { getCovidData, getLastCovidData, getCovidCasesBySex, formatDates, getMobileAverage, getMobileAverageDates}
+function buildDatasets (labels, colors, data, useXAxis, fill) {
+    var datasets = [];
+
+    data.forEach((element, key) => {
+        datasets.push(
+            {
+                label: labels[key],
+                borderColor: colors[key],
+                backgroundColor: colors[key],
+                fill: fill,
+                data: useXAxis ? data[key] : [data[key]],
+            },
+        );
+    });
+
+    return datasets;
+}
+
+export {
+    getCovidData,
+    getLastCovidData,
+    getCovidCasesBySex,
+    formatDates,
+    getMobileAverage,
+    getMobileAverageDates,
+    buildDatasets,
+}

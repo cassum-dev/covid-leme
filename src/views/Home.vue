@@ -115,7 +115,32 @@
                 <div class="content">
                     <b-tabs justified lazy>
                         <b-tab title="Casos totais" active>
-                            <LineChart/>
+                            <LineChart
+                                :chart-labels="callGetCovidData('date')"
+                                :data-labels="[
+                                    'Casos confirmados',
+                                    'Casos ativos',
+                                    'Casos suspeitos',
+                                    'Casos recuperados',
+                                    'Óbitos',
+                                ]"
+                                :colors="[
+                                    '#e46e1b',
+                                    '#ec3237',
+                                    '#ffc107',
+                                    '#00a85a',
+                                    '#606062',
+                                ]"
+                                :data="[
+                                    callGetCovidData('total_confirmed'),
+                                    callGetCovidData('active_cases'),
+                                    callGetCovidData('total_suspect'),
+                                    callGetCovidData('total_recovered'),
+                                    callGetCovidData('total_deaths'),
+                                ]"
+                                :fill="false"
+                                :use-x-axis="true"
+                            />
                             <a class="chart-info" @click="showTotalCasesInfo
                                 ? showTotalCasesInfo = false
                                 : showTotalCasesInfo = true
@@ -132,7 +157,32 @@
                             </div>
                         </b-tab>
                         <b-tab title="Curva logarítmica">
-                            <LogarithmicLineChart/>
+                            <LogarithmicLineChart
+                                :chart-labels="callGetCovidData('date')"
+                                :data-labels="[
+                                    'Casos confirmados',
+                                    'Casos ativos',
+                                    'Casos suspeitos',
+                                    'Casos recuperados',
+                                    'Óbitos',
+                                ]"
+                                :colors="[
+                                    '#e46e1b',
+                                    '#ec3237',
+                                    '#ffc107',
+                                    '#00a85a',
+                                    '#606062',
+                                ]"
+                                :data="[
+                                    callGetCovidData('total_confirmed'),
+                                    callGetCovidData('active_cases'),
+                                    callGetCovidData('total_suspect'),
+                                    callGetCovidData('total_recovered'),
+                                    callGetCovidData('total_deaths'),
+                                ]"
+                                :fill="false"
+                                :use-x-axis="true"
+                            />
                             <a class="chart-info" @click="showLogarithmicInfo
                                 ? showLogarithmicInfo = false
                                 : showLogarithmicInfo = true
