@@ -2,6 +2,13 @@
     <section>
         <b-card>
             <h4>Última atualização em {{ lastUpdatedDate }}</h4>
+
+            <input type="range" class="form-control-range"
+                :min="0"
+                :max="lastDateIndex"
+                v-model="timeRange"
+                @change="reloadCharts()"
+            >
         </b-card>
         <b-card-group columns>
             <b-card>
@@ -77,7 +84,7 @@
             <b-card>
                 <h3>Óbitos confirmados</h3>
                 <div class="content">
-                    <BarChart
+                    <BarChart :key="chartKey"
                         :chart-labels="callGetMobileAverageDates(7)"
                         :data-labels="[
                             'Óbitos confirmados',
@@ -88,7 +95,7 @@
                             '#ec3237'
                         ]"
                         :data="[
-                            callGetCovidData('total_deaths'),
+                            callGetCovidDataTest('total_deaths', timeRange),
                             callGetMobileAverage('total_deaths', 7),
                         ]"
                         :use-x-axis="true"
@@ -237,7 +244,12 @@
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
     import BarChart from "../components/BarChart";
-    import { formatDates, getLastCovidData, getCovidCasesBySex, getCovidData, getMobileAverage, getMobileAverageDates } from "../services.js";
+    import { formatDates,
+        getLastCovidData,
+        getCovidCasesBySex,getCovidData,
+        getMobileAverage,
+        getMobileAverageDates,
+        getCovidDataTest } from "../services.js";
 
     export default {
         name: "Home",
@@ -249,6 +261,9 @@
                 showLogarithmicInfo: false,
                 showCasesBySexInfo: false,
                 showTotalDeathsInfo: false,
+                timeRange: 0,
+
+                chartKey: 0,
             }
         },
         methods: {
@@ -258,6 +273,10 @@
                 }
 
                 return getCovidData(field)
+            },
+
+            callGetCovidDataTest: function(field, time) {
+                return getCovidDataTest(field, time)
             },
 
             callGetLastCovidData: function(field) {
@@ -274,6 +293,10 @@
 
             callGetMobileAverageDates: function(days) {
                 return getMobileAverageDates(days)
+            },
+
+            reloadCharts: function() {
+                return this.chartKey += 1
             }
         },
         computed: {
@@ -281,7 +304,11 @@
                 let lastDay = CovidData.find(element => element.is_last == true);
 
                 return formatDates(lastDay.date);
-            }
+            },
+
+            lastDateIndex: function() {
+                return CovidData.length;
+            },
         },
         components: {
             LineChart,
