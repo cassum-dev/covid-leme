@@ -1,5 +1,404 @@
 [
     {
+        "date":"2020-03-19",
+        "epidemiological_week": 12,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-20",
+        "epidemiological_week": 12,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-21",
+        "epidemiological_week": 12,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-22",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-23",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-24",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-25",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-26",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-27",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-28",
+        "epidemiological_week": 13,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-29",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-30",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-03-31",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-01",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-02",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-03",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-04",
+        "epidemiological_week": 14,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-05",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-06",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-07",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-08",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-09",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-10",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-11",
+        "epidemiological_week": 15,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-12",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date":"2020-04-13",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-14",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-15",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-16",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-17",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-18",
+        "epidemiological_week": 16,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-19",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-20",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-21",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-22",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-23",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-24",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-25",
+        "epidemiological_week": 17,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-26",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-27",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-28",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-29",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-04-30",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-01",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-02",
+        "epidemiological_week": 18,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-03",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-04",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-05",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-06",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-07",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-08",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-09",
+        "epidemiological_week": 19,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-10",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-11",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-12",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-13",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
+        "date": "2020-05-14",
+        "epidemiological_week": 20,
+        "is_last": false,
+        "male": 0,
+        "female": 0
+    },
+    {
         "date": "2020-05-15",
         "epidemiological_week": 20,
         "is_last": false,
