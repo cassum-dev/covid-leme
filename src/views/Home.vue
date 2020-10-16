@@ -1,14 +1,21 @@
 <template>
     <section>
         <b-card>
-            <h4>Última atualização em {{ lastUpdatedDate }}</h4>
-
-            <input type="range" class="form-control-range"
-                :min="0"
-                :max="lastDateIndex"
-                v-model="timeRange"
-                @change="reloadCharts()"
-            >
+            <h4>Você está vendo dados de {{ firstDate }} até {{ lastUpdatedDate }}</h4>
+            <p></p>
+            <div class="row">
+                <div class="col-12 col-md-2">
+                    <h5>Filtrar data final</h5>
+                </div>
+                <div class="col-12 col-md">
+                    <input type="range" class="form-control-range"
+                        :min="0"
+                        :max="lastDateIndex"
+                        v-model="timeRange"
+                        @change="reloadCharts()"
+                    >
+                </div>
+            </div>
         </b-card>
         <b-card-group columns>
             <b-card>
@@ -318,8 +325,16 @@
             }
         },
         computed: {
+            firstDate: function() {
+                let firstDay = CovidData[0];
+
+                return formatDates(firstDay.date);
+            },
+
             lastUpdatedDate: function() {
-                let lastDay = CovidData.find(element => element.is_last == true);
+                let lastDay = this.timeRange > 0
+                        ? CovidData[this.timeRange - 1]
+                        : CovidData[CovidData.length - 1]
 
                 return formatDates(lastDay.date);
             },
