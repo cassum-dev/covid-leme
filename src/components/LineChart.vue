@@ -1,22 +1,12 @@
 <script>
 import { Line } from 'vue-chartjs';
-import { buildDatasets } from "../services.js"
 
 export default {
     extends: Line,
-    props: ['chartLabels', 'dataLabels', 'colors', 'data', 'useXAxis', 'fill'],
+    props: ['chartData'],
     data () {
         return {
-            chartdata: {
-                labels: this.chartLabels,
-                datasets: buildDatasets(
-                    this.dataLabels,
-                    this.colors,
-                    this.data,
-                    this.useXAxis,
-                    this.fill,
-                ),
-            },
+            chartdata: this.chartData,
             options: {
                 responsive: true,
                 maintainAspectRatio: false

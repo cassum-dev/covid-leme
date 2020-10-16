@@ -2,49 +2,33 @@ import CovidData from "./datasources/covid.json";
 import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
 
 
-function getCovidData(field) {
+function getCovidData(field, timeRange) {
     let results = [];
 
     CovidData.forEach(element => {
         results.push(element[field])
     });
 
-    return results;
+    return timeRange > 0 ? results.slice(0, timeRange) : results;
 }
 
-function getCovidDataTest(field, time) {
-    let results = [];
+function getLastCovidData(field, timeRange, casesBySex) {
+    let dataSource = casesBySex ? CovidCasesBySex : CovidData;
 
+    let lastElement = timeRange > 0
+            ? dataSource[timeRange - 1]
+            : dataSource[dataSource.length - 1];
 
-    CovidData.forEach(element => {
-        results.push(element[field])
-    });
-
-    if (time > 0) {
-        return results.slice(0, time);
-    }
-
-    return results
+    return lastElement[field];
 }
 
-function getLastCovidData(field) {
+function getMobileAverage(field, days, timeRange) {
+    let dataLength = timeRange >= days ? timeRange : CovidData.length,
 
-    let last_element = CovidData[CovidData.length - 1];
+        firstData = CovidData[dataLength - days][field],
+        lastData = CovidData[dataLength - 1][field],
 
-    return last_element[field];
-}
-
-function getCovidCasesBySex(field) {
-    let last_element = CovidCasesBySex[CovidCasesBySex.length - 1];
-
-    return last_element[field];
-}
-
-function getMobileAverage(field, days) {
-    let firstData = CovidData[CovidData.length - days][field],
-        lastData = CovidData[CovidData.length - 1][field],
-
-        mobileAverage = new Array(CovidData.length).fill(0),
+        mobileAverage = new Array(parseInt(dataLength)).fill(0),
 
         average = (lastData - firstData) / days;
 
@@ -57,11 +41,11 @@ function getMobileAverage(field, days) {
     return mobileAverage;
 }
 
-function getMobileAverageDates(days) {
-    var startDate = getLastCovidData('date'),
-        dates = getCovidData('date');
+function getMobileAverageDates(days, timeRange) {
+    var startDate = getLastCovidData('date', timeRange),
+        dates = getCovidData('date', timeRange);
 
-    for (let i = 1; i <= days; i++) {
+    for (let i = 0; i < days; i++) {
         let date = new Date(startDate);
 
         date.setDate(date.getDate() + i);
@@ -97,31 +81,37 @@ function formatDates(data) {
     }
 }
 
-function buildDatasets (labels, colors, data, useXAxis, fill) {
-    var datasets = [];
+function buildChartData (chartLabels, dataLabels, colors, chartData, timeRange, useXAxis, fill) {
+    let chartDatasets = [];
 
-    data.forEach((element, key) => {
-        datasets.push(
+    chartData.forEach((element, key) => {
+        chartDatasets.push(
             {
-                label: labels[key],
+                label: dataLabels[key],
                 borderColor: colors[key],
                 backgroundColor: colors[key],
                 fill: fill,
-                data: useXAxis ? data[key] : [data[key]],
+                data: useXAxis ? chartData[key] : [chartData[key]],
             },
         );
     });
 
-    return datasets;
+    if (timeRange > 0) {
+        chartLabels.slice(0, timeRange)
+        chartDatasets.slice(0, timeRange)
+    }
+
+    return {
+        labels: chartLabels,
+        datasets: chartDatasets
+    }
 }
 
 export {
     getCovidData,
     getLastCovidData,
-    getCovidCasesBySex,
     formatDates,
     getMobileAverage,
     getMobileAverageDates,
-    buildDatasets,
-    getCovidDataTest,
+    buildChartData,
 }

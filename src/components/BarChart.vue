@@ -1,21 +1,12 @@
 <script>
 import { Bar } from 'vue-chartjs';
-import { buildDatasets } from '../services.js'
 
 export default {
     extends: Bar,
-    props: ['chartLabels', 'dataLabels', 'colors', 'data', 'useXAxis'],
+    props: ['chartData'],
     data () {
         return {
-            chartdata: {
-                labels: this.chartLabels,
-                datasets: buildDatasets(
-                    this.dataLabels,
-                    this.colors,
-                    this.data,
-                    this.useXAxis
-                ),
-            },
+            chartdata: this.chartData,
             options: {
                 responsive: true,
                 maintainAspectRatio: false
@@ -27,4 +18,3 @@ export default {
     }
 }
 </script>
-
