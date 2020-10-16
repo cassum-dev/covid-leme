@@ -12,7 +12,23 @@ function getCovidData(field) {
     return results;
 }
 
+function getCovidDataTest(field, time) {
+    let results = [];
+
+
+    CovidData.forEach(element => {
+        results.push(element[field])
+    });
+
+    if (time > 0) {
+        return results.slice(0, time);
+    }
+
+    return results
+}
+
 function getLastCovidData(field) {
+
     let last_element = CovidData[CovidData.length - 1];
 
     return last_element[field];
@@ -107,4 +123,5 @@ export {
     getMobileAverage,
     getMobileAverageDates,
     buildDatasets,
+    getCovidDataTest,
 }
