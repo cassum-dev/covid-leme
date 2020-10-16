@@ -15,6 +15,7 @@
                 <h3>Distribuição dos casos confirmados de covid hoje</h3>
                 <div class="content">
                     <PieChart
+                        :key="chartKey"
                         :labels="['Casos ativos', 'Casos recuperados', 'Óbitos']"
                         :colors="['#ec3237', '#00a85a', '#606062']"
                         :data="[
@@ -44,25 +45,28 @@
                 <h3>Casos confirmados hoje</h3>
                 <div class="content">
                     <BarChart
-                        :chart-labels="['']"
-                        :data-labels="[
-                            'Novos casos confirmados',
-                            'Novos casos suspeitos',
-                            'Novos casos recuperados',
-                            'Novos óbitos'
-                        ]"
-                        :colors="[
-                            '#e46e1b',
-                            '#ffc107',
-                            '#00a85a',
-                            '#606062'
-                        ]"
-                        :data="[
-                            callGetLastCovidData('new_confirmed'),
-                            callGetLastCovidData('new_suspect'),
-                            callGetLastCovidData('new_recovered'),
-                            callGetLastCovidData('new_deaths')
-                        ]"
+                        :key="chartKey"
+                        :chart-data="callBuildChartData({
+                            chartLabels: [''],
+                            dataLabels: [
+                                'Novos casos confirmados',
+                                'Novos casos suspeitos',
+                                'Novos casos recuperados',
+                                'Novos óbitos'
+                            ],
+                            colors: [
+                                '#e46e1b',
+                                '#ffc107',
+                                '#00a85a',
+                                '#606062'
+                            ],
+                            chartData: [
+                                callGetLastCovidData('new_confirmed'),
+                                callGetLastCovidData('new_suspect'),
+                                callGetLastCovidData('new_recovered'),
+                                callGetLastCovidData('new_deaths')
+                            ],
+                        })"
                     />
                     <a class="chart-info" @click="showNewCasesInfo
                         ? showNewCasesInfo = false
@@ -84,21 +88,24 @@
             <b-card>
                 <h3>Óbitos confirmados</h3>
                 <div class="content">
-                    <BarChart :key="chartKey"
-                        :chart-labels="callGetMobileAverageDates(7)"
-                        :data-labels="[
-                            'Óbitos confirmados',
-                            'Estimativas para os próximos dias'
-                        ]"
-                        :colors="[
-                            '#606062',
-                            '#ec3237'
-                        ]"
-                        :data="[
-                            callGetCovidDataTest('total_deaths', timeRange),
-                            callGetMobileAverage('total_deaths', 7),
-                        ]"
-                        :use-x-axis="true"
+                    <BarChart
+                        :key="chartKey"
+                        :chart-data="callBuildChartData({
+                            chartLabels: callGetMobileAverageDates(7),
+                            dataLabels: [
+                                'Óbitos confirmados',
+                                'Estimativas para os próximos dias'
+                            ],
+                            colors: [
+                                '#606062',
+                                '#ec3237',
+                            ],
+                            chartData: [
+                                callGetCovidData('total_deaths'),
+                                callGetMobileAverage('total_deaths', 7),
+                            ],
+                            useXAxis: true
+                        })"
                     />
                     <a class="chart-info" @click="showTotalDeathsInfo
                         ? showTotalDeathsInfo = false
@@ -123,30 +130,33 @@
                     <b-tabs justified lazy>
                         <b-tab title="Casos totais" active>
                             <LineChart
-                                :chart-labels="callGetCovidData('date')"
-                                :data-labels="[
-                                    'Casos confirmados',
-                                    'Casos ativos',
-                                    'Casos suspeitos',
-                                    'Casos recuperados',
-                                    'Óbitos',
-                                ]"
-                                :colors="[
-                                    '#e46e1b',
-                                    '#ec3237',
-                                    '#ffc107',
-                                    '#00a85a',
-                                    '#606062',
-                                ]"
-                                :data="[
-                                    callGetCovidData('total_confirmed'),
-                                    callGetCovidData('active_cases'),
-                                    callGetCovidData('total_suspect'),
-                                    callGetCovidData('total_recovered'),
-                                    callGetCovidData('total_deaths'),
-                                ]"
-                                :fill="false"
-                                :use-x-axis="true"
+                                :key="chartKey"
+                                :chart-data="callBuildChartData({
+                                    chartLabels: callGetCovidData('date'),
+                                    dataLabels: [
+                                        'Casos confirmados',
+                                        'Casos ativos',
+                                        'Casos suspeitos',
+                                        'Casos recuperados',
+                                        'Óbitos',
+                                    ],
+                                    colors: [
+                                        '#e46e1b',
+                                        '#ec3237',
+                                        '#ffc107',
+                                        '#00a85a',
+                                        '#606062',
+                                    ],
+                                    chartData: [
+                                        callGetCovidData('total_confirmed'),
+                                        callGetCovidData('active_cases'),
+                                        callGetCovidData('total_suspect'),
+                                        callGetCovidData('total_recovered'),
+                                        callGetCovidData('total_deaths'),
+                                    ],
+                                    fill: false,
+                                    useXAxis: true,
+                                })"
                             />
                             <a class="chart-info" @click="showTotalCasesInfo
                                 ? showTotalCasesInfo = false
@@ -165,30 +175,33 @@
                         </b-tab>
                         <b-tab title="Curva logarítmica">
                             <LogarithmicLineChart
-                                :chart-labels="callGetCovidData('date')"
-                                :data-labels="[
-                                    'Casos confirmados',
-                                    'Casos ativos',
-                                    'Casos suspeitos',
-                                    'Casos recuperados',
-                                    'Óbitos',
-                                ]"
-                                :colors="[
-                                    '#e46e1b',
-                                    '#ec3237',
-                                    '#ffc107',
-                                    '#00a85a',
-                                    '#606062',
-                                ]"
-                                :data="[
-                                    callGetCovidData('total_confirmed'),
-                                    callGetCovidData('active_cases'),
-                                    callGetCovidData('total_suspect'),
-                                    callGetCovidData('total_recovered'),
-                                    callGetCovidData('total_deaths'),
-                                ]"
-                                :fill="false"
-                                :use-x-axis="true"
+                                :key="chartKey"
+                                :chart-data="callBuildChartData({
+                                    chartLabels: callGetCovidData('date'),
+                                    dataLabels: [
+                                        'Casos confirmados',
+                                        'Casos ativos',
+                                        'Casos suspeitos',
+                                        'Casos recuperados',
+                                        'Óbitos',
+                                    ],
+                                    colors: [
+                                        '#e46e1b',
+                                        '#ec3237',
+                                        '#ffc107',
+                                        '#00a85a',
+                                        '#606062',
+                                    ],
+                                    chartData: [
+                                        callGetCovidData('total_confirmed'),
+                                        callGetCovidData('active_cases'),
+                                        callGetCovidData('total_suspect'),
+                                        callGetCovidData('total_recovered'),
+                                        callGetCovidData('total_deaths'),
+                                    ],
+                                    fill: false,
+                                    useXAxis: true,
+                                })"
                             />
                             <a class="chart-info" @click="showLogarithmicInfo
                                 ? showLogarithmicInfo = false
@@ -205,12 +218,12 @@
                             </div>
                         </b-tab>
                         <b-tab title="Casos entre sexos">
-                            <PieChart
+                            <PieChart :key="chartKey"
                                 :labels="['Masculino', 'Feminino']"
                                 :colors="['#0dc9da', '#f466ea']"
                                 :data="[
-                                    callGetCovidCasesBySex('male'),
-                                    callGetCovidCasesBySex('female')
+                                    callGetLastCovidData('male', true),
+                                    callGetLastCovidData('female', true)
                                 ]"
                             />
                             <a class="chart-info" @click="showCasesBySexInfo
@@ -246,10 +259,10 @@
     import BarChart from "../components/BarChart";
     import { formatDates,
         getLastCovidData,
-        getCovidCasesBySex,getCovidData,
+        getCovidData,
         getMobileAverage,
         getMobileAverageDates,
-        getCovidDataTest } from "../services.js";
+        buildChartData } from "../services.js";
 
     export default {
         name: "Home",
@@ -262,40 +275,45 @@
                 showCasesBySexInfo: false,
                 showTotalDeathsInfo: false,
                 timeRange: 0,
-
                 chartKey: 0,
             }
         },
         methods: {
+            callBuildChartData: function({
+                chartLabels,
+                dataLabels,
+                colors,
+                chartData,
+                timeRange = this.timeRange,
+                useXAxis,
+                fill,
+            }= {}) {
+                return buildChartData(chartLabels, dataLabels, colors, chartData, timeRange, useXAxis, fill)
+            },
+
             callGetCovidData: function(field) {
                 if (field == 'date') {
-                    return formatDates(getCovidData(field))
+                    return formatDates(getCovidData(field, this.timeRange))
                 }
 
-                return getCovidData(field)
+                return getCovidData(field, this.timeRange)
             },
 
-            callGetCovidDataTest: function(field, time) {
-                return getCovidDataTest(field, time)
-            },
-
-            callGetLastCovidData: function(field) {
-                return getLastCovidData(field)
-            },
-
-            callGetCovidCasesBySex: function(field) {
-                return getCovidCasesBySex(field)
+            callGetLastCovidData: function(field, casesBySex) {
+                return getLastCovidData(field, this.timeRange, casesBySex)
             },
 
             callGetMobileAverage: function(field, days) {
-                return getMobileAverage(field, days);
+                return getMobileAverage(field, days, this.timeRange);
             },
 
             callGetMobileAverageDates: function(days) {
-                return getMobileAverageDates(days)
+                return getMobileAverageDates(days, this.timeRange)
             },
 
             reloadCharts: function() {
+                // Vue.js reloads the component props every time the key change
+                // we use it to reload all charts props with new values
                 return this.chartKey += 1
             }
         },
