@@ -1,25 +1,27 @@
 <template>
     <section>
         <b-card>
-            <h4>Você está vendo dados de {{ firstDate }} até {{ lastUpdatedDate }}</h4>
+            <h4>Você está vendo dados de {{ firstUpdatedDate }} até {{ lastUpdatedDate }}</h4>
             <p></p>
             <div class="row">
                 <div class="col-12 col-md-2">
-                    <h5>Filtrar data final</h5>
+                    <h5>Filtrar datas</h5>
                 </div>
                 <div class="col-12 col-md">
-                    <input type="range" class="form-control-range"
+                    <VueSlider
                         :min="0"
                         :max="lastDateIndex"
+                        :minRange="1"
+                        :tooltip="'none'"
                         v-model="timeRange"
-                        @change="reloadCharts()"
-                    >
+                        @change="reloadCharts"
+                    />
                 </div>
             </div>
         </b-card>
         <b-card-group columns>
             <b-card>
-                <h3>Distribuição dos casos confirmados de covid hoje</h3>
+                <h3>Distribuição dos casos confirmados de Covid</h3>
                 <div class="content">
                     <PieChart
                         :key="chartKey"
@@ -264,6 +266,10 @@
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
     import BarChart from "../components/BarChart";
+
+    import VueSlider from "vue-slider-component"
+    import 'vue-slider-component/theme/default.css'
+
     import { formatDates,
         getLastCovidData,
         getCovidData,
@@ -281,7 +287,7 @@
                 showLogarithmicInfo: false,
                 showCasesBySexInfo: false,
                 showTotalDeathsInfo: false,
-                timeRange: 0,
+                timeRange: [0, CovidData.length],
                 chartKey: 0,
             }
         },
@@ -306,8 +312,8 @@
                 return getCovidData(field, this.timeRange)
             },
 
-            callGetLastCovidData: function(field, casesBySex) {
-                return getLastCovidData(field, this.timeRange, casesBySex)
+            callGetLastCovidData: function(field, useCasesBySex) {
+                return getLastCovidData(field, this.timeRange, useCasesBySex)
             },
 
             callGetMobileAverage: function(field, days) {
@@ -322,19 +328,17 @@
                 // Vue.js reloads the component props every time the key change
                 // we use it to reload all charts props with new values
                 return this.chartKey += 1
-            }
+            },
         },
         computed: {
-            firstDate: function() {
-                let firstDay = CovidData[0];
+            firstUpdatedDate: function() {
+                let firstDay = CovidData[this.timeRange[0]]
 
                 return formatDates(firstDay.date);
             },
 
             lastUpdatedDate: function() {
-                let lastDay = this.timeRange > 0
-                        ? CovidData[this.timeRange - 1]
-                        : CovidData[CovidData.length - 1]
+                let lastDay = CovidData[this.timeRange[1] - 1];
 
                 return formatDates(lastDay.date);
             },
@@ -348,6 +352,7 @@
             LogarithmicLineChart,
             PieChart,
             BarChart,
+            VueSlider,
         }
     }
 </script>

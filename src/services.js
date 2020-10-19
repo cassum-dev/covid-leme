@@ -3,27 +3,33 @@ import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
 
 
 function getCovidData(field, timeRange) {
-    let results = [];
+    let results = [],
+        firstDate = timeRange[0],
+        lastDate = timeRange[1];
 
     CovidData.forEach(element => {
         results.push(element[field])
     });
 
-    return timeRange > 0 ? results.slice(0, timeRange) : results;
+    return results.slice(firstDate, lastDate)
 }
 
-function getLastCovidData(field, timeRange, casesBySex) {
-    let dataSource = casesBySex ? CovidCasesBySex : CovidData;
+function getLastCovidData(field, timeRange, useCasesBySex) {
+    let dataSource = useCasesBySex ? CovidCasesBySex : CovidData,
+        firstDate = timeRange[0],
+        lastDate = timeRange[1];
 
-    let lastElement = timeRange > 0
-            ? dataSource[timeRange - 1]
-            : dataSource[dataSource.length - 1];
+    let lastElement = dataSource[firstDate, (lastDate - 1)]
 
     return lastElement[field];
 }
 
 function getMobileAverage(field, days, timeRange) {
-    let dataLength = timeRange >= days ? timeRange : CovidData.length,
+    let lastDate = timeRange[1],
+
+        dataLength = lastDate >= days
+            ? lastDate
+            : days,
 
         firstData = CovidData[dataLength - days][field],
         lastData = CovidData[dataLength - 1][field],
@@ -44,6 +50,7 @@ function getMobileAverage(field, days, timeRange) {
 function getMobileAverageDates(days, timeRange) {
     var startDate = getLastCovidData('date', timeRange),
         dates = getCovidData('date', timeRange);
+
 
     for (let i = 0; i < days; i++) {
         let date = new Date(startDate);
@@ -82,7 +89,9 @@ function formatDates(data) {
 }
 
 function buildChartData (chartLabels, dataLabels, colors, chartData, timeRange, useXAxis, fill) {
-    let chartDatasets = [];
+    let chartDatasets = [],
+        firstDate = timeRange[0],
+        lastDate = timeRange[1];
 
     chartData.forEach((element, key) => {
         chartDatasets.push(
@@ -96,10 +105,8 @@ function buildChartData (chartLabels, dataLabels, colors, chartData, timeRange, 
         );
     });
 
-    if (timeRange > 0) {
-        chartLabels.slice(0, timeRange)
-        chartDatasets.slice(0, timeRange)
-    }
+    chartLabels.slice(firstDate, lastDate)
+    chartDatasets.slice(firstDate, lastDate)
 
     return {
         labels: chartLabels,
