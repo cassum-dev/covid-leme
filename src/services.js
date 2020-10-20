@@ -25,26 +25,26 @@ function getLastCovidData(field, timeRange, useCasesBySex) {
 }
 
 function getMobileAverage(field, days, timeRange) {
-    let lastDate = timeRange[1],
+    let firstDate = timeRange[0],
+        lastDate = timeRange[1],
 
-        dataLength = lastDate >= days
-            ? lastDate
-            : days,
+        dataLength = lastDate - firstDate,
+        mobileAverageData = new Array(parseInt(dataLength)).fill(0),
 
-        firstData = CovidData[dataLength - days][field],
-        lastData = CovidData[dataLength - 1][field],
-
-        mobileAverage = new Array(parseInt(dataLength)).fill(0),
+        firstData = lastDate > days
+            ? CovidData[lastDate - days][field]
+            : CovidData[0],
+        lastData = CovidData[lastDate - 1][field],
 
         average = (lastData - firstData) / days;
 
     for (let i = 0; i < days; i++) {
-        mobileAverage.push(lastData + Math.ceil(average));
+        mobileAverageData.push(lastData + Math.ceil(average));
 
-        lastData = lastData + Math.ceil(average)
+        lastData += Math.ceil(average)
     }
 
-    return mobileAverage;
+    return mobileAverageData;
 }
 
 function getMobileAverageDates(days, timeRange) {
