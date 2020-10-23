@@ -1443,65 +1443,86 @@
     },
     {
         "date": "2020-10-11",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1271,
         "female": 1563
     },
     {
         "date": "2020-10-12",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1272,
         "female": 1566
     },
     {
         "date": "2020-10-13",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1284,
         "female": 1574
     },
     {
         "date": "2020-10-14",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1286,
         "female": 1579
     },
     {
         "date": "2020-10-15",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1289,
         "female": 1584
     },
     {
         "date": "2020-10-16",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1292,
         "female": 1588
     },
     {
         "date": "2020-10-17",
-        "epidemiological_week": 41,
+        "epidemiological_week": 42,
         "is_last": false,
         "male": 1293,
         "female": 1589
     },
     {
         "date": "2020-10-18",
-        "epidemiological_week": 41,
+        "epidemiological_week": 43,
         "is_last": false,
         "male": 1296,
         "female": 1593
     },
     {
         "date": "2020-10-19",
-        "epidemiological_week": 41,
-        "is_last": true,
+        "epidemiological_week": 43,
+        "is_last": false,
         "male": 1303,
         "female": 1600
+    },
+    {
+        "date": "2020-10-20",
+        "epidemiological_week": 43,
+        "is_last": false,
+        "male": 1311,
+        "female": 1613
+    },
+    {
+        "date": "2020-10-21",
+        "epidemiological_week": 43,
+        "is_last": true,
+        "male": 1318,
+        "female": 1628
+    },
+    {
+        "date": "2020-10-22",
+        "epidemiological_week": 43,
+        "is_last": true,
+        "male": 1320,
+        "female": 1630
     }
 ]
