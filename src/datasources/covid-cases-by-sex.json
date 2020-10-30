@@ -1540,10 +1540,38 @@
         "female": 1642
     },
     {
-        "date": "2020-10-24",
+        "date": "2020-10-25",
         "epidemiological_week": 44,
-        "is_last": true,
+        "is_last": false,
         "male": 1323,
         "female": 1646
+    },
+    {
+        "date": "2020-10-26",
+        "epidemiological_week": 44,
+        "is_last": false,
+        "male": 1328,
+        "female": 1653
+    },
+    {
+        "date": "2020-10-27",
+        "epidemiological_week": 44,
+        "is_last": false,
+        "male": 1330,
+        "female": 1658
+    },
+    {
+        "date": "2020-10-28",
+        "epidemiological_week": 44,
+        "is_last": false,
+        "male": 1331,
+        "female": 1664
+    },
+    {
+        "date": "2020-10-29",
+        "epidemiological_week": 44,
+        "is_last": true,
+        "male": 1335,
+        "female": 1673
     }
 ]
