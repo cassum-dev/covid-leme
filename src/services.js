@@ -39,9 +39,9 @@ function getMobileAverage(field, days, timeRange) {
         average = (lastData - firstData) / days;
 
     for (let i = 0; i < days; i++) {
-        mobileAverageData.push(lastData + Math.ceil(average));
+        mobileAverageData.push(Math.round(lastData + average));
 
-        lastData += Math.ceil(average)
+        lastData += average
     }
 
     return mobileAverageData;
