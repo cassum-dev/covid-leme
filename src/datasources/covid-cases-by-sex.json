@@ -1598,8 +1598,15 @@
     {
         "date": "2020-11-02",
         "epidemiological_week": 45,
-        "is_last": true,
+        "is_last": false,
         "male": 1339,
         "female": 1681
+    },
+    {
+        "date": "2020-11-03",
+        "epidemiological_week": 45,
+        "is_last": true,
+        "male": 1341,
+        "female": 1684
     }
 ]
