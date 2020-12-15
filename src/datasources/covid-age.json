@@ -2575,7 +2575,7 @@
     },
     {
         "date": "2020-11-29",
-        "epidemiological_week": 48,
+        "epidemiological_week": 49,
         "is_last": false,
         "ages": {
             "0-9": 95,
@@ -2588,7 +2588,7 @@
     },
     {
         "date": "2020-11-30",
-        "epidemiological_week": 48,
+        "epidemiological_week": 49,
         "is_last": false,
         "ages": {
             "0-9": 96,
@@ -2601,7 +2601,7 @@
     },
     {
         "date": "2020-12-01",
-        "epidemiological_week": 48,
+        "epidemiological_week": 49,
         "is_last": false,
         "ages": {
             "0-9": 97,
@@ -2614,7 +2614,7 @@
     },
     {
         "date": "2020-12-02",
-        "epidemiological_week": 48,
+        "epidemiological_week": 49,
         "is_last": false,
         "ages": {
             "0-9": 98,
@@ -2627,14 +2627,66 @@
     },
     {
         "date": "2020-12-03",
-        "epidemiological_week": 48,
-        "is_last": true,
+        "epidemiological_week": 49,
+        "is_last": false,
         "ages": {
             "0-9": 99,
             "10-20": 218,
             "21-40": 1434,
             "41-60": 1056,
             "61-80": 387,
+            "81-*": 59
+        }
+    },
+    {
+        "date": "2020-12-04",
+        "epidemiological_week": 49,
+        "is_last": false,
+        "ages": {
+            "0-9": 100,
+            "10-20": 220,
+            "21-40": 1436,
+            "41-60": 1057,
+            "61-80": 389,
+            "81-*": 59
+        }
+    },
+    {
+        "date": "2020-12-05",
+        "epidemiological_week": 49,
+        "is_last": false,
+        "ages": {
+            "0-9": 101,
+            "10-20": 221,
+            "21-40": 1438,
+            "41-60": 1058,
+            "61-80": 390,
+            "81-*": 59
+        }
+    },
+    {
+        "date": "2020-12-06",
+        "epidemiological_week": 50,
+        "is_last": false,
+        "ages": {
+            "0-9": 101,
+            "10-20": 221,
+            "21-40": 1440,
+            "41-60": 1059,
+            "61-80": 390,
+            "81-*": 59
+        }
+    },
+    {
+        "date": "2020-12-07",
+        "epidemiological_week": 50,
+        "is_last": true,
+        "ages": {
+            "0-9": 102,
+            "10-20": 223,
+            "21-40": 1443,
+            "41-60": 1060,
+            "61-80": 390,
             "81-*": 59
         }
     }
