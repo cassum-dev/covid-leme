@@ -2060,8 +2060,15 @@
     {
         "date": "2020-01-07",
         "epidemiological_week": 54,
-        "is_last": true,
+        "is_last": false,
         "male": 1620,
         "female": 2042
+    },
+    {
+        "date": "2020-01-08",
+        "epidemiological_week": 54,
+        "is_last": true,
+        "male": 1625,
+        "female": 2051
     }
 ]
