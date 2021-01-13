@@ -2067,8 +2067,36 @@
     {
         "date": "2020-01-08",
         "epidemiological_week": 54,
-        "is_last": true,
+        "is_last": false,
         "male": 1625,
         "female": 2051
+    },
+    {
+        "date": "2020-01-09",
+        "epidemiological_week": 54,
+        "is_last": false,
+        "male": 1625,
+        "female": 2051
+    },
+    {
+        "date": "2020-01-10",
+        "epidemiological_week": 55,
+        "is_last": false,
+        "male": 1625,
+        "female": 2051
+    },
+    {
+        "date": "2020-01-11",
+        "epidemiological_week": 55,
+        "is_last": false,
+        "male": 1642,
+        "female": 2077
+    },
+    {
+        "date": "2020-01-12",
+        "epidemiological_week": 55,
+        "is_last": true,
+        "male": 1661,
+        "female": 2095
     }
 ]
