@@ -5089,8 +5089,8 @@
     },
     {
         "date": "2021-01-31",
-        "epidemiological_week": 57,
-        "is_last": true,
+        "epidemiological_week": 58,
+        "is_last": false,
         "total_confirmed": 4251,
         "total_recovered": 3864,
         "total_suspect": 71,
@@ -5102,5 +5102,21 @@
         "new_suspect": 0,
         "new_in_icu": 0,
        "new_deaths": 0
+    },
+    {
+        "date": "2021-02-01",
+        "epidemiological_week": 58,
+        "is_last": true,
+        "total_confirmed": 4309,
+        "total_recovered": 3918,
+        "total_suspect": 76,
+        "total_in_icu": 4,
+        "total_deaths": 94,
+        "active_cases": 297,
+        "new_confirmed": 58,
+        "new_recovered": 54,
+        "new_suspect": 5,
+        "new_in_icu": 0,
+       "new_deaths": 1
     }
 ]
