@@ -20,13 +20,13 @@
               </b-nav-item>
             </b-navbar-nav>
 
-          <b-navbar-nav class="ml-auto">
+          <!-- <b-navbar-nav class="ml-auto">
             <b-nav-item>
               <router-link to="/" class="logo">
                 <img src="../assets/logo.png" alt="VueLogo">
               </router-link>
             </b-nav-item>
-          </b-navbar-nav>
+          </b-navbar-nav> -->
         </b-collapse>
       </b-navbar>
     </div>
