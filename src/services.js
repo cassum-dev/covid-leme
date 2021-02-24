@@ -10,12 +10,11 @@ const DATA_SOURCE_RELATION = {
 }
 
 function getCovidData(field, timeRange) {
-    let results = [],
-        firstDate = timeRange[0],
+    let firstDate = timeRange[0],
         lastDate = timeRange[1];
 
-    CovidData.forEach(element => {
-        results.push(element[field])
+    let results = CovidData.map(element => {
+        return element[field];
     });
 
     return results.slice(firstDate, lastDate)
@@ -71,24 +70,17 @@ function getMobileAverageDates(days, timeRange) {
 }
 
 function formatDateToDmy(date) {
-    let splitDate = date.split('-'),
-        day = splitDate[2],
-        month = splitDate[1],
-        year = splitDate[0];
-
-    return day + '/' + month + '/' + year;
+    return date.replace(/(\d{4})-(\d{2})-(\d{2})/, '$3/$2/$1');
 }
 
 function formatDates(data) {
-    if (typeof data == 'string') {
+    if (typeof data === 'string') {
         return formatDateToDmy(data);
     }
 
     if (Array.isArray(data)) {
-        let formatedDates = [];
-
-        data.forEach(element => {
-            formatedDates.push(formatDateToDmy(element))
+        let formatedDates = data.map((date) => {
+            return formatDateToDmy(date);
         })
 
         return formatedDates;
@@ -96,20 +88,17 @@ function formatDates(data) {
 }
 
 function buildChartData (chartLabels, dataLabels, colors, chartData, timeRange, useXAxis, fill) {
-    let chartDatasets = [],
-        firstDate = timeRange[0],
+    let firstDate = timeRange[0],
         lastDate = timeRange[1];
 
-    chartData.forEach((element, key) => {
-        chartDatasets.push(
-            {
-                label: dataLabels[key],
-                borderColor: colors[key],
-                backgroundColor: colors[key],
-                fill: fill,
-                data: useXAxis ? chartData[key] : [chartData[key]],
-            },
-        );
+    let chartDatasets = chartData.map((element, key) => {
+        return {
+            label: dataLabels[key],
+            borderColor: colors[key],
+            backgroundColor: colors[key],
+            fill: fill,
+            data: useXAxis ? chartData[key] : [chartData[key]],
+        };
     });
 
     chartLabels.slice(firstDate, lastDate)

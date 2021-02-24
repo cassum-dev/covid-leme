@@ -9,12 +9,13 @@
                 </div>
                 <div class="col-12 col-md">
                     <VueSlider
+                        :lazy="true"
                         :min="0"
                         :max="lastDateIndex"
                         :minRange="1"
                         :tooltip="'none'"
                         v-model="timeRange"
-                        @change="reloadCharts"
+                        @drag-end="reloadCharts"
                     />
                 </div>
             </div>
