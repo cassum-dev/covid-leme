@@ -18,7 +18,16 @@
                 },
                 options: {
                     responsive: true,
-                    maintainAspectRatio: false
+                    maintainAspectRatio: false,
+                    tooltips: {
+                        callbacks: {
+                            label: function(t, d) {
+                                let label = d.labels[t.index] + ': ' + d.datasets[0].data[t.index];
+
+                                return label + '%';
+                            }
+                        }
+                    }
                 }
             }
         },

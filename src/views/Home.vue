@@ -265,10 +265,7 @@
                         :key="chartKey"
                         :labels="['Pessoas vacinadas', 'Pessoas não vacinadas']"
                         :colors="['#17a2b8', '#606062']"
-                        :data="[
-                            callGetLastCovidData('vaccinated', 'vaccinated_data'),
-                            nonVaccinatedPopulation,
-                        ]"
+                        :data="vaccinatedData"
                     />
                     <a class="chart-info" @click="showVaccinatedInfo
                         ? showVaccinatedInfo = false
@@ -312,7 +309,8 @@
         getCovidData,
         getMobileAverage,
         getMobileAverageDates,
-        buildChartData } from "../services.js";
+        buildChartData,
+        roundDecimalPlaces } from "../services.js";
 
     export default {
         name: "Home",
@@ -385,14 +383,20 @@
                 return CovidData.length;
             },
 
-            nonVaccinatedPopulation: function () {
+            vaccinatedData: function() {
                 // The total population is referent to 2020 IBGE's data
-                const totalPopulation = 104346;
+                const population = 104346;
 
-                let vaccinated = this.callGetLastCovidData('vaccinated', 'vaccinated_data')
+                let vaccinated = this.callGetLastCovidData('vaccinated', 'vaccinated_data');
 
-                return totalPopulation - vaccinated;
-            },
+                let vaccinatedPercentage = (vaccinated / (population - vaccinated)) * 100,
+                    nonVaccinatedPercentage = (100 - vaccinatedPercentage);
+
+                return [
+                    roundDecimalPlaces(vaccinatedPercentage),
+                    roundDecimalPlaces(nonVaccinatedPercentage)
+                ]
+            }
         },
         components: {
             LineChart,

@@ -121,6 +121,10 @@ function buildChartData (chartLabels, dataLabels, colors, chartData, timeRange, 
     }
 }
 
+function roundDecimalPlaces(number) {
+    return Math.round(number * 100 + Number.EPSILON) / 100;
+}
+
 export {
     getCovidData,
     getLastCovidData,
@@ -128,4 +132,5 @@ export {
     getMobileAverage,
     getMobileAverageDates,
     buildChartData,
+    roundDecimalPlaces,
 }
