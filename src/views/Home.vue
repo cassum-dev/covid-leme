@@ -52,45 +52,20 @@
             </b-card>
 
             <b-card>
-                <h3>Casos confirmados hoje</h3>
+                <h3>Últimos casos informados</h3>
                 <div class="content">
-                    <BarChart
-                        :key="chartKey"
-                        :chart-data="callBuildChartData({
-                            chartLabels: [''],
-                            dataLabels: [
-                                'Novos casos confirmados',
-                                'Novos casos suspeitos',
-                                'Novos casos recuperados',
-                                'Novos óbitos'
-                            ],
-                            colors: [
-                                '#e46e1b',
-                                '#ffc107',
-                                '#00a85a',
-                                '#606062'
-                            ],
-                            chartData: [
-                                callGetLastCovidData('new_confirmed'),
-                                callGetLastCovidData('new_suspect'),
-                                callGetLastCovidData('new_recovered'),
-                                callGetLastCovidData('new_deaths')
-                            ],
-                        })"
-                    />
+                    <b-table-lite :items="newCasesTableItems" :responsive="true" thead-class="d-none"/>
                     <a class="chart-info" @click="showNewCasesInfo
                         ? showNewCasesInfo = false
                         : showNewCasesInfo = true
                     ">
-                        Tem alguma dúvida sobre esse gráfico?
+                        Tem alguma dúvida sobre essa tabela?
                     </a>
                     <p/>
                     <div v-show="showNewCasesInfo">
-                        <h5>O que esse gráfico representa ?</h5>
-                        O gráfico de <b>Casos confirmados hoje</b> é um gráfico de barras clássico, que exibe os novos casos confirmados, trazendo sempre as últimas informações sobre o Covid-19.
+                        <h5>O que esse tabela representa ?</h5>
+                        A tabela de <b>Casos confirmados hoje</b> exibe os novos casos confirmados, trazendo sempre as últimas informações sobre o Covid-19.
                         <p/>
-                        <h5>Como ler esse gráfico ?</h5>
-                        Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática das ultimas confirmações de casos de Covid-19 em Leme-SP.
                     </div>
                 </div>
             </b-card>
@@ -397,7 +372,28 @@
                     roundDecimalPlaces(vaccinatedPercentage),
                     roundDecimalPlaces(nonVaccinatedPercentage)
                 ]
-            }
+            },
+
+            newCasesTableItems: function() {
+                return [
+                    {
+                        label: 'Novos casos confirmados',
+                        data: this.callGetLastCovidData('new_confirmed')
+                    },
+                    {
+                        label: 'Novos casos suspeitos',
+                        data: this.callGetLastCovidData('new_suspect')
+                    },
+                    {
+                        label: 'Novos casos recuperados',
+                        data: this.callGetLastCovidData('new_recovered')
+                    },
+                    {
+                        label: 'Novos óbitos',
+                        data: this.callGetLastCovidData('new_deaths')
+                    }
+                ]
+            },
         },
         components: {
             LineChart,
