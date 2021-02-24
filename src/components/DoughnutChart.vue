@@ -27,6 +27,26 @@
                                 return label + '%';
                             }
                         }
+                    },
+                    plugins: {
+                        datalabels: {
+                            color: '#fff',
+                            display: (context) => {
+                                return context.dataset.data[context.dataIndex] !== 0
+                                    ? 'auto'
+                                    : false;
+                            },
+                            formatter: (value) => {
+                                return value + '%';
+                            },
+                            font: {
+                                lineHeight: 0.75,
+                                size: 11,
+                                weight: 'bold'
+                            },
+                            offset: 0,
+                            padding: 0
+                        }
                     }
                 }
             }

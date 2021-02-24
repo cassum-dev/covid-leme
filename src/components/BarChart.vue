@@ -9,7 +9,24 @@ export default {
             chartdata: this.chartData,
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    datalabels: {
+                        align: 'end',
+                        anchor: 'end',
+                        display: (context) => {
+                            return context.dataset.data[context.dataIndex] !== 0
+                                ? 'auto'
+                                : false;
+                        },
+                        font: {
+                            lineHeight: 0.75,
+                            weight: 'bold'
+                        },
+                        offset: 0,
+                        padding: 0
+                    }
+                }
             }
         }
     },

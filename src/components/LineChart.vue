@@ -9,7 +9,12 @@ export default {
             chartdata: this.chartData,
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    datalabels: {
+                        display: false
+                    }
+                }
             }
         }
     },

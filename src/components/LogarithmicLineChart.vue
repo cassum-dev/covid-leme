@@ -33,6 +33,11 @@ export default {
                             }
                         }
                     }]
+                },
+                plugins: {
+                    datalabels: {
+                        display: false
+                    }
                 }
             }
         }
