@@ -231,8 +231,8 @@
                                 :labels="['Masculino', 'Feminino']"
                                 :colors="['#0dc9da', '#f466ea']"
                                 :data="[
-                                    callGetLastCovidData('male', true),
-                                    callGetLastCovidData('female', true)
+                                    callGetLastCovidData('male', 'covid_cases_by_sex'),
+                                    callGetLastCovidData('female', 'covid_cases_by_sex')
                                 ]"
                             />
                             <a class="chart-info" @click="showCasesBySexInfo
@@ -312,8 +312,8 @@
                 return getCovidData(field, this.timeRange)
             },
 
-            callGetLastCovidData: function(field, useCasesBySex) {
-                return getLastCovidData(field, this.timeRange, useCasesBySex)
+            callGetLastCovidData: function(field, dataSource) {
+                return getLastCovidData(field, this.timeRange, dataSource)
             },
 
             callGetMobileAverage: function(field, days) {

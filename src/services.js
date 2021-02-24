@@ -2,6 +2,11 @@ import CovidData from "./datasources/covid.json";
 import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
 
 
+const DATA_SOURCE_RELATION = {
+    'covid_data': CovidData,
+    'covid_cases_by_sex': CovidCasesBySex,
+}
+
 function getCovidData(field, timeRange) {
     let results = [],
         firstDate = timeRange[0],
@@ -14,12 +19,12 @@ function getCovidData(field, timeRange) {
     return results.slice(firstDate, lastDate)
 }
 
-function getLastCovidData(field, timeRange, useCasesBySex) {
-    let dataSource = useCasesBySex ? CovidCasesBySex : CovidData,
+function getLastCovidData(field, timeRange, dataSource='covid_data') {
+    let data = DATA_SOURCE_RELATION[dataSource],
         firstDate = timeRange[0],
         lastDate = timeRange[1];
 
-    let lastElement = dataSource[firstDate, (lastDate - 1)]
+    let lastElement = data[firstDate, (lastDate - 1)]
 
     return lastElement[field];
 }
