@@ -1,10 +1,12 @@
 import CovidData from "./datasources/covid.json";
 import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
+import VaccinatedData from './datasources/covid-vaccinated.json';
 
 
 const DATA_SOURCE_RELATION = {
     'covid_data': CovidData,
     'covid_cases_by_sex': CovidCasesBySex,
+    'vaccinated_data': VaccinatedData,
 }
 
 function getCovidData(field, timeRange) {

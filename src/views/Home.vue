@@ -256,6 +256,42 @@
                     </b-tabs>
                 </div>
             </b-card>
+
+            <b-card v-if="true">
+                <h3>Vacinados</h3>
+                <h6 class="note">Atualizado a cada nova liberação de dados pela prefeitura de Leme-SP</h6>
+                <div class="content">
+                    <DoughnutChart
+                        :key="chartKey"
+                        :labels="['Pessoas vacinadas', 'Pessoas não vacinadas']"
+                        :colors="['#17a2b8', '#606062']"
+                        :data="[
+                            callGetLastCovidData('vaccinated', 'vaccinated_data'),
+                            nonVaccinatedPopulation,
+                        ]"
+                    />
+                    <a class="chart-info" @click="showVaccinatedInfo
+                        ? showVaccinatedInfo = false
+                        : showVaccinatedInfo = true
+                    ">
+                        Tem alguma dúvida sobre esse gráfico?
+                    </a>
+                    <p/>
+                    <div v-show="showVaccinatedInfo">
+                        <h5>O que esse gráfico representa ?</h5>
+                        O gráfico de <b>Vacinados</b> é um gráfico de rosquinha tradicional, que exibe a quantidade de pessoas vacinadas contra Covid-19 em relação a população total de Leme SP.
+                        <p/>
+                        <h5>Como ler esse gráfico ?</h5>
+                        Em um gráfico de rosquinha a leitura se dá pela comparação entre o tamanho de suas seções (fatias) em relação ao todo, providenciando uma visão clara sobre a situação clínica da população que já foi vacinada contra Covid-19 na cidade de Leme-SP.
+                        <p/>
+                        <h5>Por que esse gráfico não é atualizado diariamente ?</h5>
+                        O gráfico de <b>Vacinados</b> não é atualizado junto com os demais dados por conta da política de divulgação de dados pela secretaria de comunicação de Leme-SP, essa que por sua vez não os libera diariamente e nem possui uma recorrência de liberação pré definida para tais dados.
+                        <p/>
+                        <h5>Observações</h5>
+                        A população lemense é de 104.346 habitantes segundo o <a href="https://cidades.ibge.gov.br/brasil/sp/leme/panorama" target="_blank">IBGE 2020</a>
+                    </div>
+                </div>
+            </b-card>
         </b-card-group>
     </section>
 </template>
@@ -266,6 +302,7 @@
     import LineChart from "../components/LineChart";
     import LogarithmicLineChart from "../components/LogarithmicLineChart";
     import BarChart from "../components/BarChart";
+    import DoughnutChart from "../components/DoughnutChart";
 
     import VueSlider from "vue-slider-component"
     import 'vue-slider-component/theme/default.css'
@@ -287,6 +324,7 @@
                 showLogarithmicInfo: false,
                 showCasesBySexInfo: false,
                 showTotalDeathsInfo: false,
+                showVaccinatedInfo: false,
                 timeRange: [0, CovidData.length],
                 chartKey: 0,
             }
@@ -346,6 +384,15 @@
             lastDateIndex: function() {
                 return CovidData.length;
             },
+
+            nonVaccinatedPopulation: function () {
+                // The total population is referent to 2020 IBGE's data
+                const totalPopulation = 104346;
+
+                let vaccinated = this.callGetLastCovidData('vaccinated', 'vaccinated_data')
+
+                return totalPopulation - vaccinated;
+            },
         },
         components: {
             LineChart,
@@ -353,6 +400,7 @@
             PieChart,
             BarChart,
             VueSlider,
+            DoughnutChart,
         }
     }
 </script>
@@ -369,6 +417,11 @@
 
     .card-columns {
         column-count: 2;
+    }
+
+    .note {
+        color: #696969;
+        font-size: 0.8rem;
     }
 
     @media (min-width: 480px) {
