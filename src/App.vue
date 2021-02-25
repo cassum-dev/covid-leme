@@ -64,10 +64,17 @@
     flex: 1;
   }
 
-  @media (min-width: 500px) {
+  @media (min-width: 480px) {
     #app {
       margin-right: 5%;
       margin-left: 5%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #app {
+      margin-right: 2.5%;
+      margin-left: 2.5%;
     }
   }
 </style>

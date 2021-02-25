@@ -9,12 +9,12 @@
         <b-collapse id="nav-collapse" is-nav>
 
             <b-navbar-nav>
-              <b-nav-item disabled>
-                Histórico de Estágios do Comércio
+              <b-nav-item href="/commerce-stages">
+                Estágios do Comércio
               </b-nav-item>
-              <b-nav-item disabled>
+              <!-- <b-nav-item disabled>
                 Informações do Estágio Atual
-              </b-nav-item>
+              </b-nav-item> -->
               <b-nav-item href="/safety-pratices">
                 Boas Práticas de Segurança
               </b-nav-item>
