@@ -1,12 +1,14 @@
 import CovidData from "./datasources/covid.json";
 import CovidCasesBySex from './datasources/covid-cases-by-sex.json';
 import VaccinatedData from './datasources/covid-vaccinated.json';
+import CovidCityStatusData from './datasources/covid-city-status.json';
 
 
 const DATA_SOURCE_RELATION = {
     'covid_data': CovidData,
     'covid_cases_by_sex': CovidCasesBySex,
     'vaccinated_data': VaccinatedData,
+    'covid_city_status': CovidCityStatusData,
 }
 
 function getCovidData(field, timeRange) {
@@ -20,12 +22,17 @@ function getCovidData(field, timeRange) {
     return results.slice(firstDate, lastDate)
 }
 
-function getLastCovidData(field, timeRange, dataSource='covid_data') {
+function getLastCovidData(field, timeRange=null, dataSource='covid_data') {
     let data = DATA_SOURCE_RELATION[dataSource],
-        firstDate = timeRange[0],
-        lastDate = timeRange[1];
+        lastElement = null;
 
-    let lastElement = data[firstDate, (lastDate - 1)]
+    if (timeRange !== null) {
+        let [firstDate, lastDate] = timeRange;
+
+        lastElement = data[firstDate, (lastDate - 1)];
+    } else {
+        lastElement = data[data.length - 1];
+    }
 
     return lastElement[field];
 }
