@@ -2,7 +2,7 @@
   <header>
     <div>
       <b-navbar toggleable="lg" type="light" class="nav-bar">
-        <b-navbar-brand to="/">COVID LEME</b-navbar-brand>
+        <b-navbar-brand class="logo" to="/">COVID LEME</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -52,6 +52,10 @@ export default {
 
 .logo img {
   width: 60px;
+}
+
+.logo {
+  font-weight: bold;
 }
 
 @media (min-width: 500px) {
