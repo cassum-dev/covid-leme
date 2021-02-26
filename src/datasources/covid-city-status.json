@@ -1,101 +1,91 @@
 [
     {
-        "date": "2020-06-03",
+        "date": "2020-07-14",
         "status": "orange",
         "is_last": false
     },
     {
-        "date": "2020-06-10",
-        "status": "orange",
-        "is_last": false
-    },
-    {
-        "date": "2020-06-19",
-        "status": "orange",
-        "is_last": false
-    },
-    {
-        "date": "2020-06-26",
-        "status": "orange",
-        "is_last": false
-    },
-    {
-        "date": "2020-07-03",
+        "date": "2020-07-27",
         "status": "red",
         "is_last": false
     },
     {
-        "date": "2020-07-10",
-        "status": "orange",
-        "is_last": false
-    },
-    {
-        "date": "2020-07-17",
-        "status": "red",
-        "is_last": false
-    },
-    {
-        "date": "2020-07-24",
-        "status": "red",
-        "is_last": false
-    },
-    {
-        "date": "2020-07-31",
-        "status": "red",
-        "is_last": false
-    },
-    {
-        "date": "2020-08-07",
+        "date": "2020-08-03",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2020-08-21",
+        "date": "2020-08-31",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2020-08-28",
+        "date": "2020-09-08",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2020-09-04",
+        "date": "2020-09-14",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2020-09-11",
+        "date": "2020-09-29",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2020-10-09",
+        "date": "2020-10-13",
+        "status": "green",
+        "is_last": false
+    },
+    {
+        "date": "2020-11-09",
+        "status": "green",
+        "is_last": false
+    },
+    {
+        "date": "2020-11-16",
         "status": "green",
         "is_last": false
     },
     {
         "date": "2020-11-30",
+        "status": "green",
+        "is_last": false
+    },
+    {
+        "date": "2020-12-01",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2021-01-08",
+        "date": "2020-12-16",
         "status": "yellow",
         "is_last": false
     },
     {
-        "date": "2021-01-15",
+        "date": "2020-12-24",
+        "status": "red",
+        "is_last": false
+    },
+    {
+        "date": "2021-01-04",
+        "status": "green",
+        "is_last": false
+    },
+    {
+        "date": "2021-01-05",
+        "status": "yellow",
+        "is_last": false
+    },
+    {
+        "date": "2021-01-18",
         "status": "orange",
         "is_last": false
     },
     {
-        "date": "2021-01-22",
-        "status": "orange",
-        "is_last": false
-    },
-    {
-        "date": "2021-01-29",
+        "date": "2021-01-25",
         "status": "orange",
         "is_last": false
     },
@@ -105,7 +95,12 @@
         "is_last": false
     },
     {
-        "date": "2021-02-19",
+        "date": "2021-02-08",
+        "status": "orange",
+        "is_last": false
+    },
+    {
+        "date": "2021-02-22",
         "status": "orange",
         "is_last": true
     }
