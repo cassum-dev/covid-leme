@@ -37,12 +37,11 @@ function getLastCovidData(field, timeRange=null, dataSource='covid_data') {
     return lastElement[field];
 }
 
-function getMobileAverage(field, days, timeRange) {
-    let firstDate = timeRange[0],
-        lastDate = timeRange[1],
+function getPrevisionData(field, days, timeRange) {
+    let [firstDate, lastDate] = timeRange,
 
         dataLength = lastDate - firstDate,
-        mobileAverageData = new Array(parseInt(dataLength)).fill(0),
+        previsionData = new Array(parseInt(dataLength)).fill(0),
 
         firstData = lastDate > days
             ? CovidData[lastDate - days][field]
@@ -52,18 +51,17 @@ function getMobileAverage(field, days, timeRange) {
         average = (lastData - firstData) / days;
 
     for (let i = 0; i < days; i++) {
-        mobileAverageData.push(Math.round(lastData + average));
+        previsionData.push(Math.round(lastData + average));
 
         lastData += average
     }
 
-    return mobileAverageData;
+    return previsionData;
 }
 
-function getMobileAverageDates(days, timeRange) {
+function getPrevisionDates(days, timeRange) {
     var startDate = getLastCovidData('date', timeRange),
         dates = getCovidData('date', timeRange);
-
 
     for (let i = 0; i < days; i++) {
         let date = new Date(startDate);
@@ -125,8 +123,8 @@ export {
     getCovidData,
     getLastCovidData,
     formatDates,
-    getMobileAverage,
-    getMobileAverageDates,
+    getPrevisionData,
+    getPrevisionDates,
     buildChartData,
     roundDecimalPlaces,
 }

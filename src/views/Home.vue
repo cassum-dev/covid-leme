@@ -95,7 +95,7 @@
                     <BarChart
                         :key="chartKey"
                         :chart-data="callBuildChartData({
-                            chartLabels: callGetMobileAverageDates(7),
+                            chartLabels: callGetPrevisionDates(7),
                             dataLabels: [
                                 'Óbitos confirmados',
                                 'Estimativas para os próximos 7 dias'
@@ -106,7 +106,7 @@
                             ],
                             chartData: [
                                 callGetCovidData('total_deaths'),
-                                callGetMobileAverage('total_deaths', 7),
+                                callGetPrevisionData('total_deaths', 7),
                             ],
                             useXAxis: true
                         })"
@@ -321,8 +321,8 @@
     import { formatDates,
         getLastCovidData,
         getCovidData,
-        getMobileAverage,
-        getMobileAverageDates,
+        getPrevisionData,
+        getPrevisionDates,
         buildChartData,
         roundDecimalPlaces } from "../services.js";
 
@@ -359,12 +359,12 @@
                 return getLastCovidData(field, this.timeRange, dataSource)
             },
 
-            callGetMobileAverage: function(field, days) {
-                return getMobileAverage(field, days, this.timeRange);
+            callGetPrevisionData: function(field, days) {
+                return getPrevisionData(field, days, this.timeRange);
             },
 
-            callGetMobileAverageDates: function(days) {
-                return getMobileAverageDates(days, this.timeRange)
+            callGetPrevisionDates: function(days) {
+                return getPrevisionDates(days, this.timeRange)
             },
 
             reloadCharts: function() {
