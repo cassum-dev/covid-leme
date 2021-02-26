@@ -3681,7 +3681,7 @@
     {
         "date": "2021-02-22",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "ages": {
             "0-9": 151,
             "10-20": 408,
@@ -3694,7 +3694,7 @@
     {
         "date": "2021-02-23",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "ages": {
             "0-9": 152,
             "10-20": 412,
@@ -3707,13 +3707,26 @@
     {
         "date": "2021-02-24",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "ages": {
             "0-9": 152,
             "10-20": 415,
             "21-40": 2228,
             "41-60": 1630,
             "61-80": 611,
+            "81-*": 92
+        }
+    },
+    {
+        "date": "2021-02-25",
+        "epidemiological_week": 61,
+        "is_last": true,
+        "ages": {
+            "0-9": 153,
+            "10-20": 419,
+            "21-40": 2250,
+            "41-60": 1647,
+            "61-80": 618,
             "81-*": 92
         }
     }

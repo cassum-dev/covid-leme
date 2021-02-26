@@ -5442,7 +5442,7 @@
     {
         "date": "2021-02-22",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "total_confirmed": 5033,
         "total_recovered": 4570,
         "total_suspect": 54,
@@ -5458,7 +5458,7 @@
     {
         "date": "2021-02-23",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "total_confirmed": 5077,
         "total_recovered": 4628,
         "total_suspect": 61,
@@ -5474,7 +5474,7 @@
     {
         "date": "2021-02-24",
         "epidemiological_week": 61,
-        "is_last": true,
+        "is_last": false,
         "total_confirmed": 5128,
         "total_recovered": 4667,
         "total_suspect": 43,
@@ -5485,6 +5485,22 @@
         "new_recovered": 39,
         "new_suspect": 0,
         "new_in_icu": 2,
+        "new_deaths": 1
+    },
+    {
+        "date": "2021-02-25",
+        "epidemiological_week": 61,
+        "is_last": true,
+        "total_confirmed": 5179,
+        "total_recovered": 4705,
+        "total_suspect": 45,
+        "total_in_icu": 17,
+        "total_deaths": 119,
+        "active_cases": 355,
+        "new_confirmed": 51,
+        "new_recovered": 38,
+        "new_suspect": 2,
+        "new_in_icu": 1,
         "new_deaths": 1
     }
 ]
