@@ -98,7 +98,7 @@
                             chartLabels: callGetMobileAverageDates(7),
                             dataLabels: [
                                 'Óbitos confirmados',
-                                'Estimativas para os próximos dias'
+                                'Estimativas para os próximos 7 dias'
                             ],
                             colors: [
                                 '#606062',
@@ -123,6 +123,9 @@
                             <h5>Como ler esse gráfico ?</h5>
                             <p>
                                 Em um gráfico de barras a leitura se dá pela visualização da altura de cada barra e a subsequente comparação de determinada barra com as demais presentes, tal gráfico possibilita uma informação rápida e prática dos de casos óbito por Covid-19 em Leme-SP, assim como exibe uma estimativa de mortes para os próximos sete dias.
+                            </p>
+                            <p>
+                                Nesse gráfico, o cálculo de "Estimativas para os próximos 7 dias" é realizado utilizando a média diária dos últimos 7 dias e projetando para os 7 dias seguintes.
                             </p>
                         </b-collapse>
                     </span>
