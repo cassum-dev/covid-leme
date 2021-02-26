@@ -12,7 +12,7 @@ export default {
                 maintainAspectRatio: false,
                 plugins: {
                     datalabels: {
-                        align: 'end',
+                        align: 'left',
                         anchor: 'end',
                         display: (context) => {
                             return context.dataset.data[context.dataIndex] !== 0
@@ -23,7 +23,7 @@ export default {
                             lineHeight: 0.75,
                             weight: 'bold'
                         },
-                        offset: 0,
+                        offset: 1,
                         padding: 0
                     }
                 }
