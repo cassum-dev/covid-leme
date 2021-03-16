@@ -39,6 +39,7 @@
                         <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                         <b-collapse id="collapseCasesDistributionInfo">
+                            <hr>
                             <h5>O que esse gráfico representa ?</h5>
                             <p>
                                 O gráfico de <b>Distribuição dos casos confirmados de covid hoje</b> é um gráfico de pizza tradicional, que exibe a relação dos casos de Covid-19 totais subdividos nas seções de "Casos confirmados", "Casos ativos" e "Óbitos".
@@ -79,6 +80,7 @@
                         <h6>Tem alguma dúvida sobre essa tabela?</h6>
 
                         <b-collapse id="collapseNewCasesInfo">
+                            <hr>
                             <h5>O que esse tabela representa ?</h5>
                             <p>
                                 A tabela de <b>Casos confirmados hoje</b> exibe os novos casos confirmados, trazendo sempre as últimas informações sobre o Covid-19.
@@ -116,6 +118,7 @@
                         <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                         <b-collapse id="collapseTotalDeathsInfo">
+                            <hr>
                             <h5>O que esse gráfico representa ?</h5>
                             <p>
                                 O gráfico de <b>Óbitos confirmados</b> é um gráfico de barras clássico, que exibe os óbitos confirmados para Covid-19 por dia.
@@ -172,6 +175,7 @@
                                 <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                                 <b-collapse id="collapseTotalCasesInfo">
+                                    <hr>
                                     <h5>O que esse gráfico representa ?</h5>
                                     <p>
                                         O gráfico de <b>Casos Totais</b> é um gráfico de linhas tradicional, que exibe o crescimento das diferentes situações dos casos de Covid-19 a partir de dados diários.
@@ -218,6 +222,7 @@
                                 <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                                 <b-collapse id="collapseLogarithmicInfo">
+                                    <hr>
                                     <h5>O que esse gráfico representa ?</h5>
                                     <p>
                                         O gráfico de <b>Curva Logarítmica</b> é um gráfico de linhas, que visa exibir a taxa de contágio pelo Covid-19 a médio e longo prazo a partir de dados diários.
@@ -250,6 +255,7 @@
                         <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                         <b-collapse id="collapseCasesPerSexInfo">
+                            <hr>
                             <h5>O que esse gráfico representa ?</h5>
                             <p>
                                 O gráfico de <b>Distribuição de casos entre sexos</b> é um gráfico de pizza tradicional, que exibe a relação dos casos de Covid-19 ocorridos entre homens e mulheres.
@@ -283,6 +289,7 @@
                         <h6>Tem alguma dúvida sobre esse gráfico?</h6>
 
                         <b-collapse id="collapseVaccinatedInfo">
+                            <hr>
                             <h5>O que esse gráfico representa ?</h5>
                             <p>
                                 O gráfico de <b>Vacinados</b> é um gráfico de rosquinha tradicional, que exibe a quantidade de pessoas vacinadas contra Covid-19 em relação a população total de Leme SP.

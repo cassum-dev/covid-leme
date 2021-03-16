@@ -23,6 +23,7 @@
                     <b>O que pode abrir ?</b>
 
                     <b-collapse id="collapseEmergencyInfo">
+                        <hr>
                         <ul>
                             <li>Farmácias*</li>
                             <li>Mercados e lojas de bens essenciais*</li>
@@ -49,6 +50,7 @@
                     <b>O que pode abrir ?</b>
 
                     <b-collapse id="collapseRedInfo">
+                        <hr>
                         <ul>
                             <li>Farmácias</li>
                             <li>Mercados e lojas de conveniência</li>
@@ -73,6 +75,7 @@
                     <b>O que pode abrir ?</b>
 
                     <b-collapse id="collapseOrangeInfo">
+                        <hr>
                         <ul>
                             <li>Mercados e lojas de conveniência</li>
                             <li>Repartições públicas</li>
@@ -105,6 +108,7 @@
                     <b>O que pode abrir ?</b>
 
                     <b-collapse id="collapseYellowInfo">
+                        <hr>
                         <ul>
                             <li>Mercados e lojas de conveniência</li>
                             <li>Repartições públicas</li>
@@ -138,6 +142,7 @@
                     <b>O que pode abrir ?</b>
 
                     <b-collapse id="collapseGreenInfo">
+                        <hr>
                         <ul>
                             <li>Mercados e lojas de conveniência</li>
                             <li>Repartições públicas</li>
@@ -170,6 +175,7 @@
                     <h6>O que pode abrir ?</h6>
 
                     <b-collapse id="collapseBlueInfo">
+                        <hr>
                         Todas as atividades comerciais e sociais funcionam Normalmente, seguindo apenas regulamentações básicas como o distanciamento mínimo e o uso de máscaras.
                     </b-collapse>
                 </span>
