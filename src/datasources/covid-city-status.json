@@ -102,6 +102,21 @@
     {
         "date": "2021-02-22",
         "status": "orange",
+        "is_last": false
+    },
+    {
+        "date": "2021-03-01",
+        "status": "yellow",
+        "is_last": false
+    },
+    {
+        "date": "2021-03-05",
+        "status": "red",
+        "is_last": false
+    },
+    {
+        "date": "2021-03-15",
+        "status": "emergency",
         "is_last": true
     }
 ]
