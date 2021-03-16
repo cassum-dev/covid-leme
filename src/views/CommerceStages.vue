@@ -6,6 +6,35 @@
         </b-card>
 
         <b-card-group columns>
+            <b-card class="emergency" :class="{'current-status' : cityStatus === 'emergency'}">
+                <template #header v-if="cityStatus === 'emergency'">
+                    <h6>Estágio atual</h6>
+                </template>
+
+                <h4>Estágio emergencial</h4>
+                <p>
+                    Fase de máxima restrição, aplicada apenas quando a disseminação e as mortes por Covid-19 estão descontroladas e atingindo niveis alarmantes.
+                </p>
+                <p>
+                    Essa fase possui fortes indicadores de calamidade pública, elevando o risco para todas os membros da sociedade de um futuro colapso nos serviços de saúde público e privados, colapso esse que é iminente caso não haja o devido isolamento social.
+                </p>
+                <hr>
+                <span v-b-toggle.collapseEmergencyInfo>
+                    <b>O que pode abrir ?</b>
+
+                    <b-collapse id="collapseEmergencyInfo">
+                        <ul>
+                            <li>Farmácias*</li>
+                            <li>Mercados e lojas de bens essenciais*</li>
+                            <li>Repartições públicas essenciais*</li>
+                            <li>Serviços essenciais de assistência a população*</li>
+                        </ul>
+
+                        * - Hotários e lotação muito limitados
+                    </b-collapse>
+                </span>
+            </b-card>
+
             <b-card class="red" :class="{'current-status' : cityStatus === 'red'}">
                 <template #header v-if="cityStatus === 'red'">
                     <h6>Estágio atual</h6>
@@ -21,6 +50,7 @@
 
                     <b-collapse id="collapseRedInfo">
                         <ul>
+                            <li>Farmácias</li>
                             <li>Mercados e lojas de conveniência</li>
                             <li>Repartições públicas</li>
                             <li>Serviços essenciais de assistência a população</li>
@@ -178,7 +208,7 @@ export default {
     }
 
     .card-columns {
-        column-count: 3;
+        column-count: 4;
         color: #fff
     }
 
@@ -197,12 +227,16 @@ export default {
         padding-bottom: 0;
     }
 
+    .emergency {
+        background-color: #5900b3;
+    }
+
     .red {
-        background: #c00000 !important;
+        background-color: #c00000;
     }
 
     .orange {
-        background: #dc9601 !important;
+        background-color: #dc9601;
     }
 
     .yellow {
@@ -236,16 +270,6 @@ export default {
         .card {
             border-radius: 1rem;
             margin-top: 1.5rem;
-        }
-    }
-
-    @media (min-width: 1000px) {
-        .card-columns {
-            column-count: 5;
-        }
-
-        .card-group .card {
-            max-width: 15%;
         }
     }
 </style>
