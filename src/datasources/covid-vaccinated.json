@@ -2571,8 +2571,15 @@
     {
         "date": "2021-03-21",
         "epidemiological_week": 65,
-        "is_last": true,
+        "is_last": false,
         "doses_of_vaccine received": 9363,
         "vaccinated": 9363
+    },
+    {
+        "date": "2021-03-22",
+        "epidemiological_week": 65,
+        "is_last": true,
+        "doses_of_vaccine received": 10768,
+        "vaccinated": 10768
     }
 ]

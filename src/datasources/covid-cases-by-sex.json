@@ -2571,8 +2571,15 @@
     {
         "date": "2021-03-21",
         "epidemiological_week": 64,
-        "is_last": true,
+        "is_last": false,
         "male": 2962,
         "female": 3491
+    },
+    {
+        "date": "2021-03-22",
+        "epidemiological_week": 64,
+        "is_last": true,
+        "male": 3057,
+        "female": 3582
     }
 ]
