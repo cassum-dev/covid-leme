@@ -2732,8 +2732,29 @@
     {
         "date": "2021-04-13",
         "epidemiological_week": 67,
-        "is_last": true,
+        "is_last": false,
         "doses_of_vaccine received": 15691,
         "vaccinated": 15691
+    },
+    {
+        "date": "2021-04-14",
+        "epidemiological_week": 67,
+        "is_last": false,
+        "doses_of_vaccine received": 15691,
+        "vaccinated": 15691
+    },
+    {
+        "date": "2021-04-15",
+        "epidemiological_week": 67,
+        "is_last": false,
+        "doses_of_vaccine received": 15691,
+        "vaccinated": 15691
+    },
+    {
+        "date": "2021-04-16",
+        "epidemiological_week": 67,
+        "is_last": true,
+        "doses_of_vaccine received": 19493,
+        "vaccinated": 19493
     }
 ]
