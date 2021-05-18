@@ -6770,7 +6770,7 @@
     {
         "date": "2021-05-16",
         "epidemiological_week": 73,
-        "is_last": true,
+        "is_last": false,
         "total_confirmed": 10069,
         "total_recovered": 9254,
         "total_suspect": 50,
@@ -6782,5 +6782,21 @@
         "new_suspect": 0,
         "new_in_icu": 0,
         "new_deaths": 0
+    },
+    {
+        "date": "2021-05-17",
+        "epidemiological_week": 73,
+        "is_last": true,
+        "total_confirmed": 10217,
+        "total_recovered": 9389,
+        "total_suspect": 96,
+        "total_in_icu": 16,
+        "total_deaths": 269,
+        "active_cases": 559,
+        "new_confirmed": 148,
+        "new_recovered": 135,
+        "new_suspect": 46,
+        "new_in_icu": 0,
+        "new_deaths": 6
     }
 ]
