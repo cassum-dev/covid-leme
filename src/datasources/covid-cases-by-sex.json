@@ -3083,14 +3083,42 @@
         "date": "2021-06-02",
         "epidemiological_week": 75,
         "is_last": false,
-        "male": 5587,
+        "male": 5586,
         "female": 6284
     },
     {
         "date": "2021-06-03",
         "epidemiological_week": 75,
-        "is_last": true,
-        "male": 5587,
+        "is_last": false,
+        "male": 5586,
         "female": 6284
+    },
+    {
+        "date": "2021-06-04",
+        "epidemiological_week": 75,
+        "is_last": false,
+        "male": 5654,
+        "female": 6347
+    },
+    {
+        "date": "2021-06-05",
+        "epidemiological_week": 75,
+        "is_last": false,
+        "male": 5654,
+        "female": 6347
+    },
+    {
+        "date": "2021-06-06",
+        "epidemiological_week": 76,
+        "is_last": false,
+        "male": 5654,
+        "female": 6347
+    },
+    {
+        "date": "2021-06-07",
+        "epidemiological_week": 76,
+        "is_last": true,
+        "male": 5747,
+        "female": 6447
     }
 ]

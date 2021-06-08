@@ -3083,14 +3083,42 @@
         "date": "2021-06-02",
         "epidemiological_week": 75,
         "is_last": false,
-        "doses_of_vaccine received": 36884,
-        "vaccinated": 36884
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
     },
     {
         "date": "2021-06-03",
         "epidemiological_week": 75,
+        "is_last": false,
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
+    },
+    {
+        "date": "2021-06-04",
+        "epidemiological_week": 75,
+        "is_last": false,
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
+    },
+    {
+        "date": "2021-06-05",
+        "epidemiological_week": 75,
+        "is_last": false,
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
+    },
+    {
+        "date": "2021-06-06",
+        "epidemiological_week": 76,
+        "is_last": false,
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
+    },
+    {
+        "date": "2021-06-07",
+        "epidemiological_week": 76,
         "is_last": true,
-        "doses_of_vaccine received": 36884,
-        "vaccinated": 36884
+        "doses_of_vaccine received": 38830,
+        "vaccinated": 38830
     }
 ]
