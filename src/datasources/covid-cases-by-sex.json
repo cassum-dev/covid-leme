@@ -3208,8 +3208,29 @@
     {
         "date": "2021-06-20",
         "epidemiological_week": 78,
-        "is_last": true,
+        "is_last": false,
         "male": 6229,
         "female": 6987
+    },
+    {
+        "date": "2021-06-21",
+        "epidemiological_week": 78,
+        "is_last": false,
+        "male": 6273,
+        "female": 7032
+    },
+    {
+        "date": "2021-06-22",
+        "epidemiological_week": 78,
+        "is_last": false,
+        "male": 6316,
+        "female": 7074
+    },
+    {
+        "date": "2021-06-23",
+        "epidemiological_week": 78,
+        "is_last": true,
+        "male": 6354,
+        "female": 7096
     }
 ]
