@@ -3362,6 +3362,13 @@
     {
         "date": "2021-07-12",
         "epidemiological_week": 81,
+        "is_last": false,
+        "doses_of_vaccine received": 60814,
+        "vaccinated": 60814
+    },
+    {
+        "date": "2021-07-13",
+        "epidemiological_week": 81,
         "is_last": true,
         "doses_of_vaccine received": 60814,
         "vaccinated": 60814
